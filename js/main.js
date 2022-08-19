@@ -1,23 +1,4 @@
-$('#test-button').click(function(){
-    alert('It works!');
-})
-
-const charArr = [
-    {
-        name: 'Jean Claude',
-        male: true,
-        glasses: true,
-        eyeColor: 'brown'
-    },
-        {
-        name: 'Pierre',
-        male: true,
-        mustache: true,
-        eyeColor: 'brown'
-        }
-        // ...and so on
-]
-
+// all characters in an object with names as keys and attribute arrays as values
 const charList = {
     "Jean-Claude": ["Male","Glasses","Brown eyes","Bald","White hair","Small mouth","Small nose"],
     "Pierre": ["Male","Mustache","Brown eyes","Brown hair","Big mouth","Small nose"],
@@ -45,35 +26,53 @@ const charList = {
     "Damien":["Male","Brown eyes","Blonde hair","Small nose","Big mouth","Hat"]
 }
 
-const suspect = (Object.keys(charList));
+// list of names for easy selection, arrays for eliminator function
+const allCharNames = (Object.keys(charList));
+const suspect = allCharNames;
 const eliminated = []
 
-function findCharacters(attribute){
-    console.log(`Input: do they have the attribute: ${attribute}?`);
-    const guess = [];
-    for (const character in charList) {
-        if (suspect.includes(character)){
-            const checking = charList[character]
-            if (checking.includes(attribute)){
-                guess.push(character);
-            } else {
-                eliminated.push(character);
-                suspect.splice(suspect.indexOf(character), 1);
-            }
-        }
-    }
-    console.log('Found the following people:');
-    guess.forEach(element => {
-        console.log(` - ${element}`);        
-    });
-    console.log(`Suspects: ${suspect}`);
-    console.log(`Eliminated: ${eliminated}`);
-    console.log('');
-    if (suspect.length === 1){
-        console.log(`Found them: it is ${suspect[0]}!`);
-    }
+function selectRandomChars(){ // selects two characters at random
+    let char1 = allCharNames[Math.floor(Math.random() * allCharNames.length)];
+    let char2 = allCharNames[Math.floor(Math.random() * allCharNames.length)];
+    $('#left-card').append('<p>' + char1 + '</p>');
+    $('#right-card').append('<p>' + char2 + '</p>');
 }
 
-findCharacters("Hat");
-findCharacters("Male");
-findCharacters("Brown hair");
+selectRandomChars();
+
+// // Eliminator function:
+// function findCharacters(attribute){
+//     console.log(`Input: do they have the attribute: ${attribute}?`);
+//     const guess = [];
+//     for (const character in charList) {
+//         if (suspect.includes(character)){
+//             const checking = charList[character]
+//             if (checking.includes(attribute)){
+//                 guess.push(character);
+//             } else {
+//                 eliminated.push(character);
+//                 suspect.splice(suspect.indexOf(character), 1);
+//             }
+//         }
+//     }
+//     console.log('Found the following people:');
+//     guess.forEach(element => {
+//         console.log(` - ${element}`);        
+//     });
+//     console.log(`Suspects: ${suspect}`);
+//     console.log(`Eliminated: ${eliminated}`);
+//     console.log('');
+//     if (suspect.length === 1){
+//         console.log(`Found them: it is ${suspect[0]}!`);
+//     }
+// }
+
+// findCharacters("Hat");
+// findCharacters("Male");
+// findCharacters("Brown hair");
+
+for (const char in charList) {
+    const element = charList[char];
+    $('#left-list').append('<li>' + char + ': ' + element + '</li>')
+}
+

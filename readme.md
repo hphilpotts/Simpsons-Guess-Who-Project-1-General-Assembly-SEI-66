@@ -56,7 +56,7 @@
 
 ![Initial Wireframe Sketch](images/image1.jpeg)     
 
-- I'm starting by simply linking my HTML, CSS and JS files - jQuery included - and then testing that the page has worked. I can then run Inspector (sinister sounding!) from this page, crucial for testing everything else I go on to do! And it works!        
+- I'm starting by simply linking my HTML, CSS and JS files - jQuery included - and then testing that the page has worked. I can then run Inspector (sinister sounding!) from this page, crucial for testing everything else I go on to do. It works.        
 
 ![It's alive!](images/screenshot1.png)      
 
@@ -129,8 +129,14 @@ findCharacters("Brown hair");
 ```     
 ![Early Console Logs](images/earlyConsole.png)      
 
-- I'm wondering if my current data structure is best for my requirements: currently `obj{ name: [attributes] ... }` but I could also use `array [ {name: 'name', attribute: 'attribute}, {...} ]`. I've asked the question as to which should be better!        
-- I'm also trying to set up a drop-down button as a very rough first version.       
+- Eliminator function has been a good test of how to narrow down a list of characters using logic. I will leave this for now (but will incorporate it later when adding P v. AI mode). I'm going to build towards Player v. Player functionality first as it will be simpler!              
+- I'm now wondering if my current data structure is best for my requirements: currently `obj{ name: [attributes] ... }` but I could also use `array [ {name: 'name', attribute: 'attribute}, {...} ]`. I've asked the question as to which should be better!        
+- I'm also trying to set up a drop-down button as a very rough first version. _On second thoughts, drop-downs look a nightmare, I'll do buttons_. Taking a break from the JS side and now starting to build a rough framework on which to start to build.         
+ - Some good progress made in this regard:      
+ ![Early layout progress](images/screenshot2.png)       
+ - Use of `height: ##vh` has been helpful in providing consistent appearance regardless of screen shape/size. I've found this, along with min heights/widths useful in maintaining proportion as the screen size changes.       
+       
+
 
 
 
