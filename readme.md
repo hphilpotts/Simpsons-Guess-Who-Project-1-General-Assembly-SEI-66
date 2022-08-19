@@ -1,7 +1,7 @@
 # SEI-66 Project 1:     
 ## - build a game from scratch!       
 
-# Guess Who?        
+# 'Guess Who?'        
 
 ## Technologies used:       
 - HTML, CSS, JavaScript     
@@ -18,7 +18,7 @@
 
 ## Project Timeline:        
 ### 18/08/22: Beginning the project     
-- Decided upon 'Guess Who' after weighing up options, doing Opportunity/Risk analysis.      
+- Decided upon _Guess Who_ after weighing up options, doing Opportunity/Risk analysis.      
 - Set up GitHub repository for project, established basic file structure, added README, first commit made.      
 
 ### 19/08/22: Planning stages       
@@ -27,7 +27,7 @@
 - Game 'flow' mapped out to begin to plan functionality based on user stories.      
 
 ## 18/08/22: Beginning the project:        
-- Settled on 'Guess Who?' - or some variant thereof - as my choice of game to build. I came to this decision on the basis that it is simple enough to be achievable in the timeframe given: I'd much rather execute a simple idea well than overcommit and end up with a half-finished project. A version of this game was included in the examples shown before the project, I also took advice from a GA alum who agreed that it would make for an interesting (and achievable) project. See section 'What might have been...' below for rejected ideas!        
+- Settled on _Guess Who?_ - or some variant thereof - as my choice of game to build. I came to this decision on the basis that it is simple enough to be achievable in the timeframe given: I'd much rather execute a simple idea well than overcommit and end up with a half-finished project. A version of this game was included in the examples shown before the project, I also took advice from a GA alum who agreed that it would make for an interesting (and achievable) project. See section 'What might have been...' below for rejected ideas!        
 - Repository established, basic file structure set up, README started.
 
 ### Opportunities identified:      
@@ -61,7 +61,77 @@
 ![It's alive!](images/screenshot1.png)      
 
 - The next thing I am going to do is to set up my characters' characteristics. This is surely crying out for a JS object, right? _If you understand objects, you understand JavaScript, they say_. I'm going to see if I can find 'true to the real game' information, as the distribution of characteristics will affect how the game plays: if it ain't broke then I ain't fixing it...       
-- 
+- Found an [interesting article](https://edge.ua.edu/andie-alexander/guess-who-a-game-of-differentiation/) on _Guess Who?_ that (aside from posing some important critiques of how the game) also offers insight into how weighting of characteristics can dramatically affect the game, even to the point of 'breaking' it.        
+- Also found pre-loaded 'Character Characteristics' from [codewards.com](https://www.codewars.com/kata/58b2c5de4cf8b90723000051) - I'm going to use these as a starting point, I can always adjust and amend later. I've structured the data at this stage as follows:      
+
+```
+obj = {
+    character: [array, of, characteristic, strings],
+    character2: [array, of, different, strings]
+}
+```     
+
+- I'm now going to write a simple function that takes a characteristic and returns the characters that have that characteristic. I'm going to save the potential choices in an array.       
+- Needed to refresh my knowledge a little but got there in the end. Code is as follows:    
+
+```
+function findCharacters(attribute){
+    const guess = [];
+    for (const character in characterList) {
+        const checking = characterList[character]
+        if (checking.includes(attribute)){
+            console.log(`Found someone: ${character}`);
+            guess.push(character);
+        }
+    }
+    console.log('');
+    console.log('Found the following people:');
+    guess.forEach(element => {
+        console.log(` - ${element}`);        
+    });
+}
+```       
+
+- I'm now going to set up arrays of 'potential characters' and 'eliminated characters' to allow for repeat elimination. Added to the original function - and it works!      
+```
+const suspect = (Object.keys(charList));
+const eliminated = []
+
+function findCharacters(attribute){
+    console.log(`Input: do they have the attribute: ${attribute}?`);
+    const guess = [];
+    for (const character in charList) {
+        if (suspect.includes(character)){
+            const checking = charList[character]
+            if (checking.includes(attribute)){
+                guess.push(character);
+            } else {
+                eliminated.push(character);
+                suspect.splice(suspect.indexOf(character), 1);
+            }
+        }
+    }
+    console.log('Found the following people:');
+    guess.forEach(element => {
+        console.log(` - ${element}`);        
+    });
+    console.log(`Suspects: ${suspect}`);
+    console.log(`Eliminated: ${eliminated}`);
+    console.log('');
+    if (suspect.length === 1){
+        console.log(`Found them: it is ${suspect[0]}!`);
+    }
+}
+
+findCharacters("Hat");
+findCharacters("Male");
+findCharacters("Brown hair");
+```     
+![Early Console Logs](images/earlyConsole.png)      
+
+- I'm wondering if my current data structure is best for my requirements: currently `obj{ name: [attributes] ... }` but I could also use `array [ {name: 'name', attribute: 'attribute}, {...} ]`. I've asked the question as to which should be better!        
+- I'm also trying to set up a drop-down button as a very rough first version.       
+
 
 
 ## Unsolved Issues:     
