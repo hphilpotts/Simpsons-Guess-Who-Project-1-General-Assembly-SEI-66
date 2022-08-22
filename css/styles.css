@@ -31,6 +31,21 @@ header button {
     justify-content: space-around;
 }
 
+.dropdown-menu {
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background-color: chartreuse;
+    top: 15%;
+}
+
+#dropdown-left {
+    right: 50%;
+}
+#dropdown-right {
+    left: 50%;
+}
+
 #board {
     background-color: black;
     height: 85vh;

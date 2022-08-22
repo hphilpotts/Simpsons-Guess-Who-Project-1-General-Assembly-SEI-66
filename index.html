@@ -15,9 +15,29 @@
         <button>Player vs. Player</button>
         <button>Player vs. Computer</button>
     </header>
+    <div class="dropdown-menu" id="dropdown-left" style="display:none">
+        <div class="row-1">Is your character:
+            <button class="true-bool" id="male">Male</button>
+            <button class="">Female</button>
+            <button id="">a Child</button>
+            <button class="true-bool" id="adult">an Adult</button>
+        </div>
+        <div class="row-2">Does your character have:
+            <button class="true-bool" id="glasses">Glasses</button>
+            <button class="true-bool" id="facialHair">Facial Hair</button>
+            <button onclick="answerString('bald')">A bald head</button>
+        </div>
+        <div class="row-3">Is your character's hair:
+            <button onclick="answerString('blue')">Blue</button>
+            <button onclick="answerString('grey')">Grey</button>
+            <button onclick="answerString('yellow')">Yellow</button>
+            <button onclick="answerString('black')">Black</button>
+        </div>
+    </div>
+    <div class="dropdown-menu" id="dropdown-right" style="display:none"></div>
     <div id="dropdown-menus">
-        <button>Player 1: ask a question!</button>
-        <button>Player 2: ask a question!</button>
+        <button onclick="showLeftMenu()">Player 1: ask a question!</button>
+        <button onclick="showRightMenu()">Player 2: ask a question!</button>
     </div>
     <div id="board">
         <div class="left-side half-board" id="left-board">
