@@ -10,7 +10,7 @@
 <body>
     <header>
         <button>Rules</button>
-        <button>New Game</button>
+        <button id="new-game">New Game</button>
         <h1>Guess Who?</h1>
         <button>Player vs. Player</button>
         <button>Player vs. Computer</button>
@@ -24,6 +24,7 @@
         </div>
         <div class="row-2">Does your character have:
             <button class="true-bool" id="glasses">Glasses</button>
+            <button class="true-bool" id="tie">A tie</button>
             <button class="true-bool" id="facialHair">Facial Hair</button>
             <button onclick="answerString('bald')">A bald head</button>
         </div>
@@ -32,13 +33,39 @@
             <button onclick="answerString('grey')">Grey</button>
             <button onclick="answerString('yellow')">Yellow</button>
             <button onclick="answerString('black')">Black</button>
+            <button onclick="answerString('brown')">Brown</button>
+            <button onclick="answerString('green')">Green</button>
         </div>
         <form id="guess-form" role="search">
             <input type="text" id="makeGuess" placeholder="I think your character is...">
             <button id="submit-button">Make a guess!</button>
         </form>
     </div>
-    <div class="dropdown-menu" id="dropdown-right" style="display:none"></div>
+    <div class="dropdown-menu" id="dropdown-right" style="display:none">
+        <div class="row-1">Is your character:
+            <button class="true-boolR" id="Rmale">Male</button>
+            <button class="false-boolR" id="Rnot-male">Female</button>
+            <button class="true-boolR"id="Rchild">a Child</button>
+            <button class="false-boolR" id="Rnot-child">an Adult</button>
+        </div>
+        <div class="row-2">Does your character have:
+            <button class="true-boolR" id="Rglasses">Glasses</button>
+            <button class="true-boolR" id="Rtie">A tie</button>
+            <button class="true-boolR" id="RfacialHair">Facial Hair</button>
+            <button onclick="answerStringR('bald')">A bald head</button>
+        </div>
+        <div class="row-3">Is your character's hair:
+            <button onclick="answerStringR('blue')">Blue</button>
+            <button onclick="answerStringR('grey')">Grey</button>
+            <button onclick="answerStringR('yellow')">Yellow</button>
+            <button onclick="answerStringR('black')">Black</button>
+            <button onclick="answerStringR('brown')">Brown</button>
+            <button onclick="answerStringR('green')">Green</button>
+        </div>
+        <form id="guess-formR" role="search">
+            <input type="text" id="makeGuessR" placeholder="I think your character is...">
+            <button id="submit-buttonR">Make a guess!</button>
+        </form></div>
     <div id="dropdown-menus">
         <button onclick="showLeftMenu()">Player 1: ask a question!</button>
         <button onclick="showRightMenu()">Player 2: ask a question!</button>
@@ -61,60 +88,118 @@
                     <img src="images/character-images/lisa.png" alt="Lisa" srcset="">
                 </div>
                 <div class="box" id="box5">
-                    <img src="images/character-images/milhouse.jpeg" alt="Milhouse" srcset="">
+                    <img src="/images/character-images/maggie.gif" alt="Maggie" srcset="">
                 </div>
                 <div class="box" id="box6">
-                    <img src="" alt="" srcset="">
+                    <img src="/images/character-images/milhouse.jpeg" alt="Milhouse" srcset="">
                 </div>
                 <div class="box" id="box7">
-                    <img src="" alt="" srcset="">
+                    <img src="/images/character-images/ralph.webp" alt="Ralph" srcset="">
                 </div>
                 <div class="box" id="box8">
-                    <img src="" alt="" srcset="">
+                    <img src="/images/character-images/nelson.png" alt="Nelson" srcset="">
                 </div>
                 <div class="box" id="box9">
-                    <img src="" alt="" srcset="">
+                    <img src="images/character-images/seymour.jpeg" alt="Seymour" srcset="">
                 </div>
-                <div class="box" id="box10"><img src="
-                    " alt="" srcset=""></div>
-                <div class="box" id="box11"><img src="
-                    " alt="" srcset=""></div>
-                <div class="box" id="box12"><img src="
-                    " alt="" srcset=""></div>
-                <div class="box" id="box13"><img src="
-                    " alt="" srcset=""></div>
-                <div class="box" id="box14"><img src="
-                    " alt="" srcset=""></div>
-                <div class="box" id="box15"><img src="
-                    " alt="" srcset=""></div>
-                <div class="box" id="box16"><img src="
-                    " alt="" srcset=""></div>
-                <div class="box" id="box17"><img src="
-                    " alt="" srcset=""></div>
-                <div class="box" id="box18"><img src="
-                    " alt="" srcset=""></div>
-                <div class="box" id="box19"><img src="
-                    " alt="" srcset=""></div>
-                <div class="box" id="box20"><img src="
-                    " alt="" srcset=""></div>
-                </ul>
+                <div class="box" id="box10">
+                    <img src="images/character-images/edna.webp" alt="Edna" srcset="">
+                </div>
+                <div class="box" id="box11">
+                    <img src="images/character-images/moe.png" alt="Moe" srcset="">
+                </div>
+                <div class="box" id="box12">
+                    <img src="images/character-images/barney.webp" alt="Barney" srcset="">
+                </div>
+                <div class="box" id="box13">
+                    <img src="images/character-images/krusty.jpeg" alt="Krusty" srcset=""></div>
+                <div class="box" id="box14">
+                    <img src="images/character-images/maude.jpeg" alt="Maude" srcset="">
+                </div>
+                <div class="box" id="box15">
+                    <img src="images/character-images/flanders.jpeg" alt="Flanders" srcset=""></div>
+                <div class="box" id="box16">
+                    <img src="images/character-images/abe.jpeg" alt="Abe" srcset="">
+                </div>
+                <div class="box" id="box17">
+                    <img src="images/character-images/burns.jpeg" alt="Mr Burns" srcset="">
+                </div>
+                <div class="box" id="box18">
+                    <img src="/images/character-images/lenny.jpeg" alt="Lenny" srcset="">
+                </div>
+                <div class="box" id="box19">
+                    <img src="/images/character-images/carl.png" alt="Carl" srcset="">
+                </div>
+                <div class="box" id="box20">
+                    <img src="/images/character-images/martin.png" alt="Martin" srcset="">
+                </div>
+                <!-- </ul> -->
             </div>
         </div>
         <div class="right-side half-board" id="right-board">
-            <div id="right-crowd"></div>
+            <div id="right-crowd">
+                <div class="box" id="box21">
+                    <img src="images/character-images/homer.jpeg" alt="Homer">
+                </div>
+                <div class="box" id="box22">
+                    <img src="images/character-images/marge.png" alt="Marge">
+                </div>
+                <div class="box" id="box23">
+                    <img src="images/character-images/bart.jpeg" alt="Bart" srcset="">
+                </div>
+                <div class="box" id="box24">
+                    <img src="images/character-images/lisa.png" alt="Lisa" srcset="">
+                </div>
+                <div class="box" id="box25">
+                    <img src="/images/character-images/maggie.gif" alt="Maggie" srcset="">
+                </div>
+                <div class="box" id="box26">
+                    <img src="/images/character-images/milhouse.jpeg" alt="Milhouse" srcset="">
+                </div>
+                <div class="box" id="box27">
+                    <img src="/images/character-images/ralph.webp" alt="Ralph" srcset="">
+                </div>
+                <div class="box" id="box28">
+                    <img src="/images/character-images/nelson.png" alt="Nelson" srcset="">
+                </div>
+                <div class="box" id="box29">
+                    <img src="images/character-images/seymour.jpeg" alt="Seymour" srcset="">
+                </div>
+                <div class="box" id="box30">
+                    <img src="images/character-images/edna.webp" alt="Edna" srcset="">
+                </div>
+                <div class="box" id="box31">
+                    <img src="images/character-images/moe.png" alt="Moe" srcset="">
+                </div>
+                <div class="box" id="box32">
+                    <img src="images/character-images/barney.webp" alt="Barney" srcset="">
+                </div>
+                <div class="box" id="box33">
+                    <img src="images/character-images/krusty.jpeg" alt="Krusty" srcset=""></div>
+                <div class="box" id="box34">
+                    <img src="images/character-images/maude.jpeg" alt="Maude" srcset="">
+                </div>
+                <div class="box" id="box35">
+                    <img src="images/character-images/flanders.jpeg" alt="Flanders" srcset=""></div>
+                <div class="box" id="box36">
+                    <img src="images/character-images/abe.jpeg" alt="Abe" srcset="">
+                </div>
+                <div class="box" id="box37">
+                    <img src="images/character-images/burns.jpeg" alt="Mr Burns" srcset="">
+                </div>
+                <div class="box" id="box38">
+                    <img src="/images/character-images/lenny.jpeg" alt="Lenny" srcset="">
+                </div>
+                <div class="box" id="box39">
+                    <img src="/images/character-images/carl.png" alt="Carl" srcset="">
+                </div>
+                <div class="box" id="box40">
+                    <img src="/images/character-images/martin.png" alt="Martin" srcset="">
+                </div>
+            </div>
             <div id="right-card"></div>
         </div>
     </div>
-    <!-- <div>
-        <h2>Find people with the attribute:</h2>
-        <button>Male</button>
-        <button>Female</button>
-        <button>Brown hair</button>
-        <button>Glasses</button>
-        <button>Blue eyes</button>
-        <button>Small nose</button>
-    </div> -->
-
     <script src="/js/jquery.js"></script>
     <script src="/js/main.js"></script>
 </body>

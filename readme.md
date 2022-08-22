@@ -33,7 +33,9 @@
 
 ### 22/08/22: First branch      
 - Restructured data into array of objects.      
-- Adding early functionality, game now 'playable' thanks to the addition of character randomiser and guess buttons with corresponding alerts.              
+- Adding early functionality, game now 'playable' thanks to the addition of character randomiser and guess buttons with corresponding alerts.      
+- Full set of 20 characters added.      
+- Player 2 functionality added.        
 
 ---     
 
@@ -254,7 +256,14 @@ document.getElementById('submit-button').addEventListener('click', function(){
 - By switching `console.log()`s for `alert()`s, the game is now (just about) playable! Validation added to guess box as well.      
 ![We have liftoff screenshot](images/screenshot3.png)       
 - Next step - adding intial character images to the 'board'. `fadeOut()`s added when character is clicked on to replicate the action of flipping a character down in the physical board game.       
-- Adding 16 more characters to board.       
+- Added 15 more characters to board, added respective objects to main.js.       
+- Added second board for P2. Minor css changes to clean up look a little where `<div>` differentiation by colour no longer needed.      
+- Second set of buttons added for player 2. PvP now working. _I've had to create duplicate functions, classes and ID's to again get around the fact that I would otherwise be re-using element ID's. Not especially DRY but I can come back and refactor later_.        
+- **Should have branched before making these recent changes! Initially 'broke' the code and took a lot of adjustment to get working again!**
+
+
+
+
 
 
 
