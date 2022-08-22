@@ -18,9 +18,9 @@
     <div class="dropdown-menu" id="dropdown-left" style="display:none">
         <div class="row-1">Is your character:
             <button class="true-bool" id="male">Male</button>
-            <button class="">Female</button>
-            <button id="">a Child</button>
-            <button class="true-bool" id="adult">an Adult</button>
+            <button class="false-bool" id="not-male">Female</button>
+            <button class="true-bool"id="child">a Child</button>
+            <button class="false-bool" id="not-child">an Adult</button>
         </div>
         <div class="row-2">Does your character have:
             <button class="true-bool" id="glasses">Glasses</button>
@@ -33,6 +33,10 @@
             <button onclick="answerString('yellow')">Yellow</button>
             <button onclick="answerString('black')">Black</button>
         </div>
+        <form id="guess-form" role="search">
+            <input type="text" id="makeGuess" placeholder="I think your character is...">
+            <button id="submit-button">Make a guess!</button>
+        </form>
     </div>
     <div class="dropdown-menu" id="dropdown-right" style="display:none"></div>
     <div id="dropdown-menus">
@@ -44,26 +48,55 @@
             <div id="left-card"></div>
             <div id="left-crowd">
                 <!-- <ul id="left-list"> -->
-                <div class="box" id="box1"></div>
-                <div class="box" id="box2"></div>
-                <div class="box" id="box3"></div>
-                <div class="box" id="box4"></div>
-                <div class="box" id="box5"></div>
-                <div class="box" id="box6"></div>
-                <div class="box" id="box7"></div>
-                <div class="box" id="box8"></div>
-                <div class="box" id="box9"></div>
-                <div class="box" id="box10"></div>
-                <div class="box" id="box11"></div>
-                <div class="box" id="box12"></div>
-                <div class="box" id="box13"></div>
-                <div class="box" id="box14"></div>
-                <div class="box" id="box15"></div>
-                <div class="box" id="box16"></div>
-                <div class="box" id="box17"></div>
-                <div class="box" id="box18"></div>
-                <div class="box" id="box19"></div>
-                <div class="box" id="box20"></div>
+                <div class="box" id="box1">
+                    <img src="images/character-images/homer.jpeg" alt="Homer">
+                </div>
+                <div class="box" id="box2">
+                    <img src="images/character-images/marge.png" alt="Marge">
+                </div>
+                <div class="box" id="box3">
+                    <img src="images/character-images/bart.jpeg" alt="Bart" srcset="">
+                </div>
+                <div class="box" id="box4">
+                    <img src="images/character-images/lisa.png" alt="Lisa" srcset="">
+                </div>
+                <div class="box" id="box5">
+                    <img src="images/character-images/milhouse.jpeg" alt="Milhouse" srcset="">
+                </div>
+                <div class="box" id="box6">
+                    <img src="" alt="" srcset="">
+                </div>
+                <div class="box" id="box7">
+                    <img src="" alt="" srcset="">
+                </div>
+                <div class="box" id="box8">
+                    <img src="" alt="" srcset="">
+                </div>
+                <div class="box" id="box9">
+                    <img src="" alt="" srcset="">
+                </div>
+                <div class="box" id="box10"><img src="
+                    " alt="" srcset=""></div>
+                <div class="box" id="box11"><img src="
+                    " alt="" srcset=""></div>
+                <div class="box" id="box12"><img src="
+                    " alt="" srcset=""></div>
+                <div class="box" id="box13"><img src="
+                    " alt="" srcset=""></div>
+                <div class="box" id="box14"><img src="
+                    " alt="" srcset=""></div>
+                <div class="box" id="box15"><img src="
+                    " alt="" srcset=""></div>
+                <div class="box" id="box16"><img src="
+                    " alt="" srcset=""></div>
+                <div class="box" id="box17"><img src="
+                    " alt="" srcset=""></div>
+                <div class="box" id="box18"><img src="
+                    " alt="" srcset=""></div>
+                <div class="box" id="box19"><img src="
+                    " alt="" srcset=""></div>
+                <div class="box" id="box20"><img src="
+                    " alt="" srcset=""></div>
                 </ul>
             </div>
         </div>

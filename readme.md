@@ -33,7 +33,7 @@
 
 ### 22/08/22: First branch      
 - Restructured data into array of objects.      
-- Adding early functionality.       
+- Adding early functionality, game now 'playable' thanks to the addition of character randomiser and guess buttons with corresponding alerts.              
 
 ---     
 
@@ -223,6 +223,41 @@ for (let i=0; i < trueBoolButtons.length; i++){
 }
 ```
 _Again - I've spent too much time getting this to work! I'm quite conscious that I am spending more time trying to make my code as 'DRY' as I can than I would if I just wrote out simple, repetitive code. Clearly a balance to be struck here!_       
+- First task after lunch is soring out false-bool buttons. I've given them an id of `"not-`"trueBoolId" - this is in order to maintain code already written that uses the 'true-bool' button id to run. With the use of `!object.key` and `substring(4)` this works as below:       
+```
+    <button class="false-bool" id="not-child">an Adult</button>
+```
+```
+    // within similar function to trueBoolButtons above:
+    [...]
+    response = !(guessMe[(event.target.id).substring(4)]);
+    [...]
+```     
+- Tests work! We are getting some way towards having useable funcitonality. Now I'm going to add a 'Guess Character' form inside the button box so that our player can make a guess after asking questions:         
+```
+    <form id="guess-form" role="search">
+        <input type="text" id="makeGuess" placeholder="I think your character is...">
+        <button id="submit-button">Make a guess!</button>
+    </form>
+```
+```
+document.getElementById('submit-button').addEventListener('click', function(){
+    event.preventDefault(); // showing as deprecated, what should it be instead?
+    let guess = document.getElementById('makeGuess').value;
+    if (guess.toLowerCase() == guessMe.name.toLowerCase()){
+        alert("You guessed correctly!")
+    } else {
+        alert("No, try again")
+    }
+})
+```
+- By switching `console.log()`s for `alert()`s, the game is now (just about) playable! Validation added to guess box as well.      
+![We have liftoff screenshot](images/screenshot3.png)       
+- Next step - adding intial character images to the 'board'. `fadeOut()`s added when character is clicked on to replicate the action of flipping a character down in the physical board game.       
+- Adding 16 more characters to board.       
+
+
+
 
 
 

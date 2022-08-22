@@ -39,6 +39,10 @@ header button {
     top: 15%;
 }
 
+#search-guess{
+    width: 200px;
+}
+
 #dropdown-left {
     right: 50%;
 }
@@ -111,7 +115,14 @@ header button {
 .box {
     height: 18%;
     width: 23%;
-    background-color: aqua;
+    background-color: white;
     float: left;
     margin: 1%;
+}
+
+.box img {
+    max-width: 100%;
+    max-height: 150%;
+    min-width: 100%;
+    min-height: 100%;
 }

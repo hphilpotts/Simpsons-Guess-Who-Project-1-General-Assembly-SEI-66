@@ -20,41 +20,67 @@ let lisa = new char("Lisa", false, true, "yellow", false, false);
 let milhouse = new char("Milhouse", true, true, "blue", false, true);
 
 
-// get random character
+// get random character - ***add second for PvP later***
 let guessMe = charArr[Math.floor(Math.random() * charArr.length)]; 
-// answer string - will work as long as attribute string is unique to one key!
+
+// ---
+// Button functions below:
+
+// will work as long as attribute string is unique to one key!
 function answerString(attribute){
     let response = (Object.values(guessMe).includes(attribute));
-    console.log(response);
+    if (response) {
+        alert("Yep!")
+    } else {
+        alert("Nope!")
+    }
+    showLeftMenu();
 }
 
 const trueBoolButtons = $('.true-bool');
-
 for (let i=0; i < trueBoolButtons.length; i++){
     let buttonId = trueBoolButtons[i].id;
-    console.log(buttonId);
     $(`#${buttonId}`).click(function(event){
         response = guessMe[event.target.id];
-        console.log(response);
+        if (response){
+            alert('Yep!')
+        } else {
+            alert('Nope!')
+        }
+        showLeftMenu();
     });
 }
 
-// works!
-$('#male').click(function(event){
-    response = guessMe[event.target.id];
-    console.log(response);
-});
+const falseBoolButtons = $('.false-bool');
+for (let i=0; i < falseBoolButtons.length; i++){
+    let buttonId = (falseBoolButtons[i].id);
+    $(`#${buttonId}`).click(function(event){
+        response = !(guessMe[(event.target.id).substring(4)]);
+        if (response) {
+            alert('Yep!');
+        } else {
+            alert('Nope!');
+        }
+        showLeftMenu();
+    });
+}
 
-// This is giving me problems!
-// function answerBool(key){
-//     console.log(key);
-//     console.log(guessMe[key]); // doesn't work, always false
- 
-//     // console.log(guessMe[eval(key)]); // just doesn't work
+// ---
+// Guess alert ***change alert to <div> to allow auto close! Same for button q's above.
+document.getElementById('submit-button').addEventListener('click', function(){
+    event.preventDefault(); // showing as deprecated, what should it be instead? Works though.
+    let guess = document.getElementById('makeGuess').value.toLowerCase();
+    if (guess == guessMe.name.toLowerCase()){
+        alert("Woohoo! You guessed correctly!")
+        location.reload();
+    } else if (charArr.filter(obj => obj.name.toLowerCase() == guess).length == 1) {
+        alert("D'oh! Try again")
+    } else {
+        alert('Not a character. Trying is the first step towards failure.')
+    }
+    showLeftMenu();
+})
 
-//     // key = eval.key();
-//     // console.log(guessMe.key); also no
-// }
 
 console.log('Guess me :');
 console.log(guessMe);
@@ -62,66 +88,16 @@ console.log(guessMe);
 // Show/hide menus
 function showLeftMenu(){
     const menu = $('#dropdown-left');
-    menu.toggle();
+    menu.slideToggle();
 }
 function showRightMenu(){
     const menu = $('#dropdown-right');
     menu.toggle();
 }
 
-
-
-
-
-// all characters in an object with names as keys and attribute arrays as values
-
-// // list of names for easy selection, arrays for eliminator function
-// const allCharNames = (Object.keys(charList));
-// const suspect = allCharNames;
-// const eliminated = []
-
-// function selectRandomChars(){ // selects two characters at random
-//     let char1 = allCharNames[Math.floor(Math.random() * allCharNames.length)];
-//     let char2 = allCharNames[Math.floor(Math.random() * allCharNames.length)];
-//     $('#left-card').append('<p>' + char1 + '</p>');
-//     $('#right-card').append('<p>' + char2 + '</p>');
-// }
-
-// selectRandomChars();
-
-// // Eliminator function:
-// function findCharacters(attribute){
-//     console.log(`Input: do they have the attribute: ${attribute}?`);
-//     const guess = [];
-//     for (const character in charList) {
-//         if (suspect.includes(character)){
-//             const checking = charList[character]
-//             if (checking.includes(attribute)){
-//                 guess.push(character);
-//             } else {
-//                 eliminated.push(character);
-//                 suspect.splice(suspect.indexOf(character), 1);
-//             }
-//         }
-//     }
-//     console.log('Found the following people:');
-//     guess.forEach(element => {
-//         console.log(` - ${element}`);        
-//     });
-//     console.log(`Suspects: ${suspect}`);
-//     console.log(`Eliminated: ${eliminated}`);
-//     console.log('');
-//     if (suspect.length === 1){
-//         console.log(`Found them: it is ${suspect[0]}!`);
-//     }
-// }
-
-// findCharacters("Hat");
-// findCharacters("Male");
-// findCharacters("Brown hair");
-
-// for (const char in charList) {
-//     const element = charList[char];
-//     $('#left-list').append('<li>' + char + ': ' + element + '</li>')
-// }
+// Hide character cards:
+$('.box img').click(function(){
+    $(this).fadeOut();
+    }
+);
 
