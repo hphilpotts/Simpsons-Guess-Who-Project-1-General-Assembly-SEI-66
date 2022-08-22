@@ -59,7 +59,7 @@ header button {
     background-color: red;
     margin-top: 3%;
     margin-left: 10px;
-    margin-right: 0px;
+    margin-right: 5px;
 }
 
 #left-crowd {
@@ -82,7 +82,7 @@ header button {
     background-color: red;
     margin-right: 10px;
     margin-top: 3%;
-    margin-left: 0px;
+    margin-left: 5px;
 }
 
 #right-crowd {

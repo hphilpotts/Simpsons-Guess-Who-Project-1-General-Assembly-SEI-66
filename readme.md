@@ -26,6 +26,11 @@
 - Initial wireframe sketched out on paper to plan UI based on user stories.     
 - Game 'flow' mapped out to begin to plan functionality based on user stories.      
 
+### 19/08/22: First steps
+- Linked HTML, CSS, JS and jQuery files.        
+- Basic data structure set up (`object` with `name:array` pairs), simple function written to test how to sort/eliminate chararaters based on characteristics.      
+- Basic page layout built.            
+
 ## 18/08/22: Beginning the project:        
 - Settled on _Guess Who?_ - or some variant thereof - as my choice of game to build. I came to this decision on the basis that it is simple enough to be achievable in the timeframe given: I'd much rather execute a simple idea well than overcommit and end up with a half-finished project. A version of this game was included in the examples shown before the project, I also took advice from a GA alum who agreed that it would make for an interesting (and achievable) project. See section 'What might have been...' below for rejected ideas!        
 - Repository established, basic file structure set up, README started.
@@ -58,7 +63,9 @@
 
 - I'm starting by simply linking my HTML, CSS and JS files - jQuery included - and then testing that the page has worked. I can then run Inspector (sinister sounding!) from this page, crucial for testing everything else I go on to do. It works.        
 
-![It's alive!](images/screenshot1.png)      
+![It's alive!](images/screenshot1.png)          
+
+## 19/08/22: First steps:       
 
 - The next thing I am going to do is to set up my characters' characteristics. This is surely crying out for a JS object, right? _If you understand objects, you understand JavaScript, they say_. I'm going to see if I can find 'true to the real game' information, as the distribution of characteristics will affect how the game plays: if it ain't broke then I ain't fixing it...       
 - Found an [interesting article](https://edge.ua.edu/andie-alexander/guess-who-a-game-of-differentiation/) on _Guess Who?_ that (aside from posing some important critiques of how the game) also offers insight into how weighting of characteristics can dramatically affect the game, even to the point of 'breaking' it.        
