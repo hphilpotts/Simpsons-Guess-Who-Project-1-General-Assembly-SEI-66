@@ -54,9 +54,17 @@ button {
 .dropdown-menu {
     position: absolute;
     height: 500px;
-    width: 500px;
-    background-color: chartreuse;
-    top: 15%;
+    width: 200px;
+    background-color: rgb(133, 210, 248);
+    border: #FFD90F solid 10px;
+    border-radius: 10px;
+    outline: black solid 2px;
+    top: 17.5%;
+    padding: 5px;
+}
+
+.dropdown-menu button {
+    margin: 3px;
 }
 
 #search-guess{

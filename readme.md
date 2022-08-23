@@ -263,6 +263,7 @@ document.getElementById('submit-button').addEventListener('click', function(){
 - Added second board for P2. Minor css changes to clean up look a little where `<div>` differentiation by colour no longer needed.      
 - Second set of buttons added for player 2. PvP now working. _I've had to create duplicate functions, classes and ID's to again get around the fact that I would otherwise be re-using element ID's. Not especially DRY but I can come back and refactor later_.        
 - **Should have branched before making these recent changes! Initially 'broke' the code and took a lot of adjustment to get working again!**        
+- Overall a big piece of work: I kept on finding that the LH buttons were also triggering the RH button functions. Solution is a bit of a messy one where I doubled down on having two sets of parallel id's and then converted the RH ones by removing the 'R' from the id name in order to pass the corrected ID name into the RH function. _I'm sure there is a cleaner way but at this point I am focusing on just getting functional code out there before tidying things up / reworking things later!_        
 - Progress at close 22/08/22:       
 ![Full character set screenshot](images/screenshot4.png)        
 
@@ -272,8 +273,10 @@ document.getElementById('submit-button').addEventListener('click', function(){
 - Button styling added. Borders added to most elements.         
 - Used: `box-sizing: border-box;` in order to add border inside character boxes: this does not impact the spacing and helps minimise the whitespace below images (_look at fixing whitespace further on!_).         
 - Overall look greatly improved after ~1hr of work!         
-![Font, colour, background, borders added](images/screenshot5.png)      
+![Font, colour, background, borders added](images/screenshot5.png) 
+---     
 - 'cards' to the left/right edge of the board resized as they would go square on wider screens.     
+- Now working on formatting the dropdown menus, fixing a snag where they drop and cover the majority of the board.      
 
 
 
