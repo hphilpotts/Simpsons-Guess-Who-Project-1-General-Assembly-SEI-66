@@ -177,3 +177,6 @@ $('.box img').click(function(){
     }
 );
 
+// Character card width variable 
+$('#right-card').width(($('#right-card').height() * 0.8))
+$('#left-card').width($('#right-card').width());

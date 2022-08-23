@@ -1,34 +1,54 @@
-
+html {
+    font-family: 'Gloria Hallelujah', cursive;
+}
 body {
     min-width: 1000px;
     min-height: 1000px;
 }
 
 header {
-    background-color: red;
+    background-color: rgb(133, 210, 248);
     position: relative;
     display: flex;
     align-content: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 8vh;
     min-height: 50px;
+    color: #FFD90F;
+    text-shadow:
+    -1px -1px 0 rgb(236, 160, 8),
+    1px -1px 0 rgba(0, 0, 0, 0.82),
+    -1px 1px 0 rgba(0, 0, 0, 0.802),
+    1px 1px 0 rgba(0, 0, 0, 0.821); 
+    padding: 5px;
 }
 
 button {
     min-height: 20px;
+    background-color: #FFD90F;
+    font-family: 'Gloria Hallelujah', cursive;
+    border-radius: 5px;
+    border-right: 3px solid rgb(236, 160, 8);
+    border-bottom: 3px solid rgb(236, 160, 8);
+    border-top: 1.5px solid rgb(236, 160, 8);
+    border-left: 1.5px solid rgb(236, 160, 8);
+    padding: 5px;
+    max-height: 40px;
 }
 
-header button {
-    margin: 20px;
-}
+/* header button {
+    /* margin: 20px; */
+/* } */
 
 #dropdown-menus {
-    background-color: blue;
+    background-color: rgb(133, 210, 248);
     height: 5vh;
     min-height: 24px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    border-bottom: 3px solid #F8659F;
+    padding: 5px;
 }
 
 .dropdown-menu {
@@ -52,9 +72,12 @@ header button {
 
 #board {
     background-color: black;
+    background-image: url(/images/misc-images/background2.jpeg);
+    /* background-size: cover; */
     height: 85vh;
     width: 100%;
     display: flex;
+    border-top: 2px solid #F8659F;
 }
 
 .half-board {
@@ -68,49 +91,57 @@ header button {
 }
 
 #left-board {
-    background-color: white;
+    /* background-color: white; */
     width: 50%;
 }
 
 #left-card {
-    height: 20%;
-    width: 20%;
-    background-color: red;
+    height: 110px;
+    /* width: 20%; */
+    background-color:rgb(133, 210, 248);
     margin-top: 3%;
     margin-left: 10px;
     margin-right: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
 #left-crowd {
     height: 70vh;
     width: 53vh;
-    background-color: red;
+    background-color: #F8659F;
     margin-right: 10px;
     margin-top: 3%;
     font-size: small;
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
 #right-board {
-    background-color: white;
+    /* background-color: white; */
     width: 50%;
 }
 
 #right-card {
-    height: 20%;
-    width: 20%;
-    background-color: blue;
+    height: 110px;
+    /* width: 20%; */
+    background-color: #F8659F;
     margin-right: 10px;
     margin-top: 3%;
     margin-left: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
 #right-crowd {
     height: 70vh;
     width: 53vh;
-    background-color: blue;
+    background-color:rgb(133, 210, 248);
     margin-left: 10px;
     margin-top: 3%;
     font-size: small;
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
 .box {
@@ -119,6 +150,9 @@ header button {
     background-color: white;
     float: left;
     margin: 1%;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 1px;
 }
 
 .box img {

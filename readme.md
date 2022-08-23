@@ -1,7 +1,7 @@
 # SEI-66 Project 1:     
 ### - build a game from scratch!       
 
-# 'Guess Who?'        
+# 'The Simpsons':'Guess Who?'        
 
 ## Technologies used:       
 - HTML, CSS, JavaScript     
@@ -35,7 +35,10 @@
 - Restructured data into array of objects.      
 - Adding early functionality, game now 'playable' thanks to the addition of character randomiser and guess buttons with corresponding alerts.      
 - Full set of 20 characters added.      
-- Player 2 functionality added.        
+- Player 2 functionality added.         
+
+### 23/08/22: UI/Design Focus       
+- Font family added, worked on backgrounds and colour palette.             
 
 ---     
 
@@ -259,7 +262,20 @@ document.getElementById('submit-button').addEventListener('click', function(){
 - Added 15 more characters to board, added respective objects to main.js.       
 - Added second board for P2. Minor css changes to clean up look a little where `<div>` differentiation by colour no longer needed.      
 - Second set of buttons added for player 2. PvP now working. _I've had to create duplicate functions, classes and ID's to again get around the fact that I would otherwise be re-using element ID's. Not especially DRY but I can come back and refactor later_.        
-- **Should have branched before making these recent changes! Initially 'broke' the code and took a lot of adjustment to get working again!**
+- **Should have branched before making these recent changes! Initially 'broke' the code and took a lot of adjustment to get working again!**        
+- Progress at close 22/08/22:       
+![Full character set screenshot](images/screenshot4.png)        
+
+## 23/08/22: UI / Design Focus:         
+- Now that I have 2 Player functionality - sucessfully tested as working - my focus today will be around improving UI, design and styling. This way if I get pinched for time, I will still have a workable (and crucially, submittable) project. Player vs. computer can come later, if there is time!     
+- Font added ('Gloria Hallelujah - from Google Fonts), colour palette chosen based on: 'Simpson' yellow, sky blue, 'donut' pink. Background added - _can be changed later if improved choice found_.               
+- Button styling added. Borders added to most elements.         
+- Used: `box-sizing: border-box;` in order to add border inside character boxes: this does not impact the spacing and helps minimise the whitespace below images (_look at fixing whitespace further on!_).         
+- Overall look greatly improved after ~1hr of work!         
+![Font, colour, background, borders added](images/screenshot5.png)      
+- 'cards' to the left/right edge of the board resized as they would go square on wider screens.     
+
+
 
 
 
