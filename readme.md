@@ -297,7 +297,26 @@ $('.card').click(function(){
 ---         
 - Taking a break from styling to add comment to my code as it is getting harder to navigate! Will allow me to collapse sections I am not working on but still be able to find them easily. Also will make my code a bit more readable when I need help!         
 ---     
-- Changing alerts: to popup divs instead:
+- Now changing alerts to popup divs instead. Intial plan is to use a function to create (and subsequently remove) a div, that will work across all button functions.        
+- Early tests are working fine but I am having issues where the closePopUp function attached to the 'ok' happens before a click happens. For the moment I am instead setting a 2000ms timeout before closing the box.       
+- Popup styling lifted from dropdown menus in order to maintain consistent look.        
+```
+function popUp(words){
+    $('body').prepend('<div class="dropdown-menu popup" id="pop-up"><p>' + words + '</p><button id="ok">Ok</button></div>');
+    setTimeout(() => {
+        $(closePopUp());
+    }, 3000);
+}
+
+function closePopUp(){
+    console.log('close');
+    $('#pop-up').remove();
+}
+```     
+- Now adding above popUp function to all guess button functions in order to replace alerts used previously.     
+- Had to add second argument `size` to `popUp` function in order to trigger larger boxes when required (e.g. for Guess attempts)        
+---     
+- Adding sound effects to buttons, popups.      
 
 
 
@@ -310,10 +329,12 @@ $('.card').click(function(){
 
 
 ## Unsolved Issues:               
-- change alerts to `<divs>`     
+- Add close / ok button functionality to popups        
 - alt names: e.g.: `['Abe', 'Grandpa', 'Grandpa Simpson']`          
-- add further questions     
-- add sound / victory animation?        
+- add further questions  
+- add timeout to sounds: too responsive            
+- add better sounds?   
+- add victory animation?        
 - animate: reveal character card on edges       
 - enforce turns         
 - P v AI?           

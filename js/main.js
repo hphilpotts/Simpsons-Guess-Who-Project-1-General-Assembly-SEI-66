@@ -57,18 +57,18 @@ $('#right-card').prepend('<img class="hidden cardImg" src="' + guessMe.image + '
 function answerString(attribute){
     let response = (Object.values(guessMe).includes(attribute));
     if (response) {
-        alert("Yep!")
+        popUp('Yes!');
     } else {
-        alert("Nope!")
+        popUp('Nope!');
     }
     showLeftMenu();
 }
 function answerStringR(attribute){
     let response = (Object.values(guessMe2).includes(attribute));
     if (response) {
-        alert("Yep!")
+        popUp('Yes!');
     } else {
-        alert("Nope!")
+        popUp('Nope!');
     }
     showRightMenu();
 }
@@ -80,9 +80,9 @@ for (let i=0; i < trueBoolButtons.length; i++){
     $(`#${buttonId}`).click(function(event){
         response = guessMe[event.target.id];
         if (response){
-            alert('Yep!')
+            popUp('Yes!')
         } else {
-            alert('Nope!')
+            popUp('Nope!');
         }
         showLeftMenu();
     });
@@ -95,9 +95,9 @@ for (let i=0; i < trueBoolButtonsR.length; i++){
         response2 = guessMe2[event.target.id.substring(1)];
         console.log(response2);
         if (response2){
-            alert('Yep!')
+            popUp('Yes!');
         } else {
-            alert('Nope!')
+            popUp('Nope!');
         }
         showRightMenu();
     });
@@ -110,9 +110,9 @@ for (let i=0; i < falseBoolButtons.length; i++){
     $(`#${buttonId}`).click(function(event){
         response = !(guessMe[(event.target.id).substring(4)]);
         if (response) {
-            alert('Yep!');
+            popUp('Yes!');
         } else {
-            alert('Nope!');
+            popUp('Nope!');
         }
         showLeftMenu();
     });
@@ -124,13 +124,35 @@ for (let i=0; i < falseBoolButtonsR.length; i++){
     $(`#${buttonId2}`).click(function(event){
         response2 = !(guessMe2[(event.target.id).substring(5)]);
         if (response2) {
-            alert('Yep!');
+            popUp('Yes!');
         } else {
-            alert('Nope!');
+            popUp('Nope!');
         }
         showRightMenu();
     });
 }
+
+// Popup function to show 'response' as element to user instead of as page alert
+function popUp(words, size){
+    $('body').append('<div class="dropdown-menu popup" id="pop-up"><p>' + words + '</div>');
+    if (size === 'large'){
+        $('#pop-up').addClass('popupLarge');
+    };
+    if (words === 'Nope!'){
+        document.getElementById('wrong').play();
+    } else if (words === 'Yes!'){
+        document.getElementById('ding').play();
+    }
+    setTimeout(() => {
+        $(closePopUp());
+    }, 2000);
+}
+// closes above popup
+function closePopUp(){
+    console.log('close');
+    $('#pop-up').remove();
+}
+
 
 // ---
 // Guess Who functionality 'solves for winner', displays message and resets game. Shows message if incorrect guess / not a character name.
@@ -139,14 +161,17 @@ document.getElementById('submit-button').addEventListener('click', function(){
     let guess = document.getElementById('makeGuess').value.toLowerCase();
     if (guess == guessMe.name.toLowerCase()){
         $('#right-card').children('img').toggleClass('hidden');
+        document.getElementById('winner').play();
+        popUp("Woohoo! You guessed correctly!", 'large');
         setTimeout(() => {
-            alert("Woohoo! You guessed correctly!"); 
             location.reload();
-        }, 1000);
+        }, 3000);
     } else if (charArr.filter(obj => obj.name.toLowerCase() == guess).length == 1) {
-        alert("D'oh! Try again")
+        document.getElementById('wrong').play();
+        popUp("D'oh! Try again", 'large');
     } else {
-        alert('Not a character. Trying is the first step towards failure.')
+        document.getElementById('sad').play();
+        popUp('Not a character. Remember: trying is the first step towards failure.', 'large');
     }
     showLeftMenu();
 })
@@ -154,16 +179,19 @@ document.getElementById('submit-buttonR').addEventListener('click', function(){
     event.preventDefault(); // showing as deprecated, what should it be instead? Works though.
     let guess = document.getElementById('makeGuessR').value.toLowerCase();
     if (guess == guessMe2.name.toLowerCase()){
+        document.getElementById('winner').play();
         $('#left-card').children('img').toggleClass('hidden');
+        popUp("Woohoo! You guessed correctly!",'large')
         setTimeout(() => {
-            alert("Woohoo! You guessed correctly!"); 
             location.reload();
-        }, 1000);
+        }, 3000);
 
     } else if (charArr.filter(obj => obj.name.toLowerCase() == guess).length == 1) {
-        alert("D'oh! Try again")
+        document.getElementById('wrong').play();
+        popUp("D'oh! Try again",'large');
     } else {
-        alert('Not a character. Trying is the first step towards failure.')
+        document.getElementById('sad').play();
+        popUp('Not a character. Trying is the first step towards failure.','large');
     }
     showRightMenu();
 })
@@ -186,6 +214,7 @@ function showRightMenu(){
 // Show hide character images to simulate flipping down eliminated characters:
 $('.box img').click(function(){
     $(this).fadeOut();
+    document.getElementById('fold').play();
     }
 );
 
@@ -194,6 +223,12 @@ $('.card').click(function(){
     $(this).children('img').toggleClass('hidden');
     }
 )
+
+
+// Sounds functions:
+$('button').click(function(){
+    document.getElementById('clicked').play();
+})
 
 // Character card width variable - purely visual! 
 $('#right-card').width(($('#right-card').height() * 0.8))
