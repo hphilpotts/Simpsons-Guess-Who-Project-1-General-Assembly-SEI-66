@@ -11,6 +11,7 @@
         </style>
 </head>
 <body>
+    <!-- Top line of four buttons, title -->
     <header>
         <button>Rules</button>
         <button id="new-game">New Game</button>
@@ -18,46 +19,51 @@
         <button>Player vs. Player</button>
         <button>Player vs. Computer</button>
     </header>
+    <!-- Left-hand 'ask a question' dropdown, default is hidden -->
     <div class="dropdown-menu" id="dropdown-left" style="display:none">
-        <div class="row-1">Is your character:
+        <div class="instruct">Click again to hide menu and see characters!</div>
+        <div class="row-1">Is your character:<br>
             <button class="true-bool" id="male">Male</button>
             <button class="false-bool" id="not-male">Female</button>
             <button class="true-bool"id="child">a Child</button>
             <button class="false-bool" id="not-child">an Adult</button>
         </div>
-        <div class="row-2">Does your character have:
+        <div class="row-2">Does your character have:<br>
             <button class="true-bool" id="glasses">Glasses</button>
             <button class="true-bool" id="tie">A tie</button>
             <button class="true-bool" id="facialHair">Facial Hair</button>
             <button onclick="answerString('bald')">A bald head</button>
         </div>
-        <div class="row-3">Is your character's hair:
+        <div class="row-3">Is your character's hair:<br>
             <button onclick="answerString('blue')">Blue</button>
             <button onclick="answerString('grey')">Grey</button>
             <button onclick="answerString('yellow')">Yellow</button>
             <button onclick="answerString('black')">Black</button>
             <button onclick="answerString('brown')">Brown</button>
             <button onclick="answerString('green')">Green</button>
+            <button onclick="answerString('wispy')">Wispy</button>
         </div>
         <form id="guess-form" role="search">
             <input type="text" id="makeGuess" placeholder="I think your character is...">
             <button id="submit-button">Make a guess!</button>
         </form>
     </div>
+    <!-- Right-hand 'ask a question' dropdown, default is hidden -->
     <div class="dropdown-menu" id="dropdown-right" style="display:none">
-        <div class="row-1">Is your character:
+        <div class="instruct">Click again to hide menu and see characters!</div>
+        <div class="row-1">Is your character:<br>
             <button class="true-boolR" id="Rmale">Male</button>
             <button class="false-boolR" id="Rnot-male">Female</button>
             <button class="true-boolR"id="Rchild">a Child</button>
             <button class="false-boolR" id="Rnot-child">an Adult</button>
         </div>
-        <div class="row-2">Does your character have:
+        <div class="row-2">Does your character have:<br>
             <button class="true-boolR" id="Rglasses">Glasses</button>
             <button class="true-boolR" id="Rtie">A tie</button>
             <button class="true-boolR" id="RfacialHair">Facial Hair</button>
             <button onclick="answerStringR('bald')">A bald head</button>
         </div>
-        <div class="row-3">Is your character's hair:
+        <div class="row-3">Is your character's hair:<br>
             <button onclick="answerStringR('blue')">Blue</button>
             <button onclick="answerStringR('grey')">Grey</button>
             <button onclick="answerStringR('yellow')">Yellow</button>
@@ -68,14 +74,22 @@
         <form id="guess-formR" role="search">
             <input type="text" id="makeGuessR" placeholder="I think your character is...">
             <button id="submit-buttonR">Make a guess!</button>
-        </form></div>
+        </form>
+    </div>
+    <!-- Buttons to show/hide 'ask a question' dropdowns above -->
     <div id="dropdown-menus">
         <button onclick="showLeftMenu()">Player 1: ask a question!</button>
         <button onclick="showRightMenu()">Player 2: ask a question!</button>
     </div>
+    <!-- Playable area, encompasses both 'crowds' and both 'mystery character cards' -->
     <div id="board">
+        <!-- Left side -->
         <div class="left-side half-board" id="left-board">
-            <div id="left-card"></div>
+            <!-- Left hand card -->
+            <div class="card" id="left-card">
+                <img class="cardImg qmark" src="images/misc-images/qmark1.jpeg">
+            </div>
+            <!-- Left hand crowd -->
             <div id="left-crowd">
                 <!-- <ul id="left-list"> -->
                 <div class="box" id="box1">
@@ -139,7 +153,9 @@
                 <!-- </ul> -->
             </div>
         </div>
+        <!-- Right side -->
         <div class="right-side half-board" id="right-board">
+            <!-- Right-hand crowd -->
             <div id="right-crowd">
                 <div class="box" id="box21">
                     <img src="images/character-images/homer.jpeg" alt="Homer">
@@ -200,7 +216,10 @@
                     <img src="/images/character-images/martin.png" alt="Martin" srcset="">
                 </div>
             </div>
-            <div id="right-card"></div>
+            <!-- Right-hand card -->
+            <div class="card" id="right-card">
+                <img class="cardImg qmark" src="images/misc-images/qmark1.jpeg">
+            </div>
         </div>
     </div>
     <script src="/js/jquery.js"></script>

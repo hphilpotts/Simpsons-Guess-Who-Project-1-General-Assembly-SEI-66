@@ -7,8 +7,9 @@ $('#new-game').click(function(){
 
 const charArr = [];
 
-function char(name, male, child, hairColour, facialHair, glasses, tie, suspect = true){
+function char(name, image, male, child, hairColour, facialHair, glasses, tie, suspect = true){
     this.name = name;
+    this.image = image;
     this.male = male;
     this.child = child;
     this.hairColour = hairColour;
@@ -19,36 +20,40 @@ function char(name, male, child, hairColour, facialHair, glasses, tie, suspect =
     charArr.push(this);
 }
 
-let homer = new char("Homer", true, false, "bald", true, false, false);
-let marge = new char("Marge", false, false, "blue", false, false, false);
-let bart = new char("Bart", true, true, "yellow", false, false, false);
-let lisa = new char("Lisa", false, true, "yellow", false, false, false);
-let milhouse = new char("Milhouse", true, true, "blue", false, true, false);
-let maggie = new char("Maggie", false, true, "yellow", false, false, false);
-let ralph = new char("Ralph", true, true, "black", false, false, false);
-let nelson = new char('Nelson', true, true, 'brown', false, false, false);
-let seymour = new char('Seymour', true, false, 'grey', false, false, true);
-let edna = new char('Edna', false, false, 'brown', false, false, false);
-let moe = new char('Moe', true, false, 'grey', false, false, true);
-let barney = new char('Barney', true, false, 'brown', false, false, false);
-let krusty = new char('Krusty', true, false, 'green', true, false, true);
-let maude = new char('Maude', false, false, 'brown', false, false, false);
-let ned = new char('Ned', true, false, 'brown', true, true, false);
-let abe = new char('Abe', true, false, 'yellow', true, true, true);
-let monty = new char('Monty', true, false, 'blue', false, false, true);
-let lenny = new char('Lenny', true, false, 'brown', false, false, false);
-let carl = new char('Carl', true, false, 'black', false, false, false);
-let martin = new char('Martin', true, true, 'brown', false, false, false)
+let homer = new char("Homer", 'images/character-images/homer.jpeg', true, false, "bald", true, false, false);
+let marge = new char("Marge", 'images/character-images/marge.png', false, false, "blue", false, false, false);
+let bart = new char("Bart", 'images/character-images/bart.jpeg', true, true, "yellow", false, false, false);
+let lisa = new char("Lisa", 'images/character-images/lisa.png', false, true, "yellow", false, false, false);
+let milhouse = new char("Milhouse", 'images/character-images/milhouse.jpeg', true, true, "blue", false, true, false);
+let maggie = new char("Maggie", 'images/character-images/maggie.gif', false, true, "yellow", false, false, false);
+let ralph = new char("Ralph", 'images/character-images/ralph.webp', true, true, "wispy", false, false, false);
+let nelson = new char('Nelson', 'images/character-images/nelson.png', true, true, 'brown', false, false, false);
+let seymour = new char('Seymour', 'images/character-images/seymour.jpeg', true, false, 'grey', false, false, true);
+let edna = new char('Edna', 'images/character-images/edna.webp', false, false, 'brown', false, false, false);
+let moe = new char('Moe', 'images/character-images/moe.png', true, false, 'grey', false, false, true);
+let barney = new char('Barney', 'images/character-images/barney.webp', true, false, 'brown', false, false, false);
+let krusty = new char('Krusty', 'images/character-images/krusty.jpeg', true, false, 'green', true, false, true);
+let maude = new char('Maude', 'images/character-images/maude.jpeg', false, false, 'brown', false, false, false);
+let ned = new char('Ned', 'images/character-images/flanders.jpeg', true, false, 'brown', true, true, false);
+let abe = new char('Abe', 'images/character-images/abe.jpeg', true, false, 'yellow', true, true, true);
+let monty = new char('Monty', 'images/character-images/burns.jpeg', true, false, 'blue', false, false, true);
+let lenny = new char('Lenny', 'images/character-images/lenny.jpeg', true, false, 'black', false, false, false);
+let carl = new char('Carl', 'images/character-images/carl.png', true, false, 'black', false, false, false);
+let martin = new char('Martin', 'images/character-images/martin.png', true, true, 'brown', false, false, false)
 
 
-// get random character - ***add second for PvP later***
+// Gets random character
 let guessMe = charArr[Math.floor(Math.random() * charArr.length)];
 let guessMe2 = charArr[Math.floor(Math.random() * charArr.length)]; 
+
+// Populate char cards with (hidden) character image:
+$('#left-card').prepend('<img class="hidden cardImg" src="' + guessMe2.image + '">')
+$('#right-card').prepend('<img class="hidden cardImg" src="' + guessMe.image + '">')
 
 // ---
 // Button functions below:
 
-// will work as long as attribute string is unique to one key!
+// for :values that are strings (rather than bools) - works as long as attribute string is unique to one key!
 function answerString(attribute){
     let response = (Object.values(guessMe).includes(attribute));
     if (response) {
@@ -67,10 +72,9 @@ function answerStringR(attribute){
     }
     showRightMenu();
 }
-// both working fine.
 
+// for :values that are true bools, left and right side
 const trueBoolButtons = $('.true-bool');
-
 for (let i=0; i < trueBoolButtons.length; i++){
     let buttonId = trueBoolButtons[i].id;
     $(`#${buttonId}`).click(function(event){
@@ -99,6 +103,7 @@ for (let i=0; i < trueBoolButtonsR.length; i++){
     });
 }
 
+// for :values that are false bools, left and right side
 const falseBoolButtons = $('.false-bool');
 for (let i=0; i < falseBoolButtons.length; i++){
     let buttonId = (falseBoolButtons[i].id);
@@ -128,13 +133,16 @@ for (let i=0; i < falseBoolButtonsR.length; i++){
 }
 
 // ---
-// Guess alert ***change alert to <div> to allow auto close! Same for button q's above.
+// Guess Who functionality 'solves for winner', displays message and resets game. Shows message if incorrect guess / not a character name.
 document.getElementById('submit-button').addEventListener('click', function(){
     event.preventDefault(); // showing as deprecated, what should it be instead? Works though.
     let guess = document.getElementById('makeGuess').value.toLowerCase();
     if (guess == guessMe.name.toLowerCase()){
-        alert("Woohoo! You guessed correctly!")
-        location.reload();
+        $('#right-card').children('img').toggleClass('hidden');
+        setTimeout(() => {
+            alert("Woohoo! You guessed correctly!"); 
+            location.reload();
+        }, 1000);
     } else if (charArr.filter(obj => obj.name.toLowerCase() == guess).length == 1) {
         alert("D'oh! Try again")
     } else {
@@ -146,8 +154,12 @@ document.getElementById('submit-buttonR').addEventListener('click', function(){
     event.preventDefault(); // showing as deprecated, what should it be instead? Works though.
     let guess = document.getElementById('makeGuessR').value.toLowerCase();
     if (guess == guessMe2.name.toLowerCase()){
-        alert("Woohoo! You guessed correctly!")
-        location.reload();
+        $('#left-card').children('img').toggleClass('hidden');
+        setTimeout(() => {
+            alert("Woohoo! You guessed correctly!"); 
+            location.reload();
+        }, 1000);
+
     } else if (charArr.filter(obj => obj.name.toLowerCase() == guess).length == 1) {
         alert("D'oh! Try again")
     } else {
@@ -156,12 +168,12 @@ document.getElementById('submit-buttonR').addEventListener('click', function(){
     showRightMenu();
 })
 
+// Tests:
+// console.log('Guess me :');
+// console.log(guessMe);
+// console.log(guessMe2);
 
-console.log('Guess me :');
-console.log(guessMe);
-console.log(guessMe2);
-
-// Show/hide menus
+// Show/hide dropdown menus to keep interface less cluttered
 function showLeftMenu(){
     const menu = $('#dropdown-left');
     menu.slideToggle();
@@ -171,12 +183,18 @@ function showRightMenu(){
     menu.slideToggle();
 }
 
-// Hide character cards:
+// Show hide character images to simulate flipping down eliminated characters:
 $('.box img').click(function(){
     $(this).fadeOut();
     }
 );
 
-// Character card width variable 
+// Show/hide character cards to allow player to answer:
+$('.card').click(function(){
+    $(this).children('img').toggleClass('hidden');
+    }
+)
+
+// Character card width variable - purely visual! 
 $('#right-card').width(($('#right-card').height() * 0.8))
 $('#left-card').width($('#right-card').width());

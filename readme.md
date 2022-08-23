@@ -277,15 +277,27 @@ document.getElementById('submit-button').addEventListener('click', function(){
 ---     
 - 'cards' to the left/right edge of the board resized as they would go square on wider screens.     
 - Now working on formatting the dropdown menus, fixing a snag where they drop and cover the majority of the board.      
-
-
-
-
-
-
-
-
-
+- Decided the workaround would be to add instruction to show/hide box: the edges of the screen are too narrow, having the box cover the other side of the board does not look/feel right from a user perspective.       
+- Boxes now look as follows, further buttons to be added later - space allows for this:     
+![Dropdown Boxes 2.0](images/dropdownbox2.png)      
+- Next task: populating 'Guess Who' cards on LH and RH sides. The first thing I realise is that I could (/should) have stored the character image paths within the char objects...doing so now.         
+- Now that I have done this it is relatively easy to populate these using jQuery to append an img with a source of `guessMe.image`:         
+```
+$('#right-card').append('<img class="hidden cardImg" src="' + guessMe.image + '">')
+```
+- And I can hide/reveal like so:        
+```
+$('.card').click(function(){
+    $(this).children('img').toggleClass('hidden');
+    }
+)
+```         
+- Question Mark images added to cards with `.hidden` toggled off: they show by default on load but hide when the character image is shown, and vice versa.      
+- Hidden Character images on cards will toggle to shown when a correct guess is made. Delay added to page reload / alert message to improve feel.       
+---         
+- Taking a break from styling to add comment to my code as it is getting harder to navigate! Will allow me to collapse sections I am not working on but still be able to find them easily. Also will make my code a bit more readable when I need help!         
+---     
+- Changing alerts: to popup divs instead:
 
 
 
@@ -297,7 +309,16 @@ document.getElementById('submit-button').addEventListener('click', function(){
 
 
 
-## Unsolved Issues:     
+## Unsolved Issues:               
+- change alerts to `<divs>`     
+- alt names: e.g.: `['Abe', 'Grandpa', 'Grandpa Simpson']`          
+- add further questions     
+- add sound / victory animation?        
+- animate: reveal character card on edges       
+- enforce turns         
+- P v AI?           
+- draggable dialogue boxes?     
+- whitespace below character images: crop to ensure all images square?      
 
 ## Solving for the winner:      
 
@@ -310,7 +331,7 @@ document.getElementById('submit-button').addEventListener('click', function(){
 - Multiple players: either needs 6 people to play on one screen (cumbersome/clumsy) or 5 separate 'AI' (probably beyond my current skillset). One for the future, maybe!        
 
 ### Scrabble:       
-- Would require a dictionary-type API. No way I'm going to manually input every word in the dictionary! 'Scrabble - but only with words beginning with 'A'' not likely to become an instant classic.        
+- Would require a dictionary-type API? No way I'm going to manually input every word in the dictionary! 'Scrabble - but only with words beginning with 'A'' not likely to become an instant classic.        
 - Programming a computer opponent that doesn't just choose the optimal word each time is going to be a problem.     
 
 ### Bohnanza:       
