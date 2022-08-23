@@ -215,11 +215,10 @@ input {
 
 .qmark {
     mix-blend-mode: multiply;
+    /* z-index: 0; */
 }
 /* toggled to show/hide */
-.hidden {
-    display: none;
-}
+
 
 /* Popup class */
 .popup {
@@ -235,8 +234,26 @@ input {
     align-content: center;
     font-size: 30px;
 }
-
 .popupLarge {
     width: 40%;
     height: 25%;
+}
+
+/* Rules Box element: */
+.rulesBox {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    top: 19%;
+    padding: 0px;
+    /* left: 100px; */
+    /* z-index: -1; */
+}
+
+/* hidden class */
+.hidden {
+    display: none;
 }

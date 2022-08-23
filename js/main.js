@@ -118,7 +118,6 @@ for (let i=0; i < falseBoolButtons.length; i++){
     });
 }
 const falseBoolButtonsR = $('.false-boolR');
-console.log(falseBoolButtonsR);
 for (let i=0; i < falseBoolButtonsR.length; i++){
     let buttonId2 = (falseBoolButtonsR[i].id);
     $(`#${buttonId2}`).click(function(event){
@@ -224,6 +223,11 @@ $('.card').click(function(){
     }
 )
 
+// Show/hide rules box
+document.getElementById('rules').addEventListener('click', function(){
+    let hideThis = document.getElementById('ruleBox');
+    hideThis.classList.toggle('hidden');
+})
 
 // Sounds functions:
 $('button').click(function(){

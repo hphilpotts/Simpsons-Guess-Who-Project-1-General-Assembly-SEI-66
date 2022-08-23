@@ -317,15 +317,7 @@ function closePopUp(){
 - Had to add second argument `size` to `popUp` function in order to trigger larger boxes when required (e.g. for Guess attempts)        
 ---     
 - Adding sound effects to buttons, popups.      
-
-
-
-
-
-
-       
-
-
+- Rules box added so that 'Rules' button now has functionality.     
 
 
 ## Unsolved Issues:               
