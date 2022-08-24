@@ -195,11 +195,6 @@ document.getElementById('submit-buttonR').addEventListener('click', function(){
     showRightMenu();
 })
 
-// Tests:
-// console.log('Guess me :');
-// console.log(guessMe);
-// console.log(guessMe2);
-
 // Show/hide dropdown menus to keep interface less cluttered
 function showLeftMenu(){
     const menu = $('#dropdown-left');
@@ -219,6 +214,7 @@ $('.box img').click(function(){
 
 // Show/hide character cards to allow player to answer:
 $('.card').click(function(){
+    document.getElementById('flip').play();
     $(this).children('img').toggleClass('hidden');
     }
 )
@@ -229,10 +225,17 @@ document.getElementById('rules').addEventListener('click', function(){
     hideThis.classList.toggle('hidden');
 })
 
-// Sounds functions:
+// Button sounds functions:
 $('button').click(function(){
     document.getElementById('clicked').play();
 })
+
+// Background music
+function musicLoop(){
+    document.getElementById('bgm').play();
+}
+// Commenting this out for now before my sanity finally fails me....
+// musicLoop();
 
 // Character card width variable - purely visual! 
 $('#right-card').width(($('#right-card').height() * 0.8))

@@ -39,6 +39,16 @@
 
 ### 23/08/22: UI/Design Focus       
 - Font family added, worked on backgrounds and colour palette.             
+- Buttons/boxes formatted to match theme.       
+- Dropdown menus formatted and repositioned.        
+- 'Rules' button functionality added.       
+- 'Mystery' card functionality added with images populated from `char` objects.     
+- `alert()`s changed to 'Pop up' elements instead to allow for formatting / more functionality.     
+- Sounds added to most buttons / actions.       
+
+### 24/08/22: (headline here)       
+- Background music added on loop.       
+
 
 ---     
 
@@ -319,8 +329,19 @@ function closePopUp(){
 - Adding sound effects to buttons, popups.      
 - Rules box added so that 'Rules' button now has functionality.     
 
+## 24/08/22: (headline here):       
+- Background music added. Used `loop="true"` HTML attribute in order to loop. Was going to write a recursive function but this was simpler! _Commented out the `musicLoop()` function for now because I can't listen to that music literally all day or I'll go insane..._          
+- Adding sound to 'mystery' cards: now this is done, all actions/clicks have a sound effect which has significantly improved the feel of the game.      
+---
+_The finish line is in sight with the project due to be presented in 48 hours' time. I'm happy that I have got to a playable level of functionality at this stage. I now need to make the best use of the time that remains: setting ambitious goals could significantly improve my project, too ambitious and I risk ending up with half-finished work._       
+---     
+- I've elected to try to get through as many 'quick wins' in my 'unsolved issues' list as I can: these should be easily achieveable and will together deliver lots of small improvements that lift the project as a whole.      
+- Firstly: adding 'alt names: e.g.: `['Abe', 'Grandpa', 'Grandpa Simpson']`' - at the moment, the player must guess the name I have specified and all other versions will be rejected.      
+- Step 1: change `char.name`s from strings to arrays.  
 
-## Unsolved Issues:               
+
+## Unsolved Issues:    
+- Show chars again when re-clicked.                
 - Add close / ok button functionality to popups        
 - alt names: e.g.: `['Abe', 'Grandpa', 'Grandpa Simpson']`          
 - add further questions  
@@ -332,6 +353,7 @@ function closePopUp(){
 - P v AI?           
 - draggable dialogue boxes?     
 - whitespace below character images: crop to ensure all images square?      
+- CSS needs refactoring
 
 ## Solving for the winner:      
 
