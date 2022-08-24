@@ -292,6 +292,21 @@ function musicLoop(){
 // Commenting this out for now before my sanity finally fails me....
 // musicLoop();
 
+// Mute sound
+function muteIt(){
+    const loudNoises= document.querySelectorAll('audio');
+    for (const element of loudNoises){
+        if (element.muted === true){
+            element.muted = false
+            musicLoop(); // resumes BGM (unless I've commented it about, as above)
+        } else {
+            element.muted = true;
+            element.pause()
+        }
+    }
+}
+document.getElementById('mute').addEventListener('click', muteIt)
+
 // Character card width variable - purely visual! 
 $('#right-card').width(($('#right-card').height() * 0.8))
 $('#left-card').width($('#right-card').width());

@@ -32,6 +32,7 @@
 - Basic page layout built.    
 
 ### 22/08/22: First branch      
+- Decided on a 'Simpsons' theme.     
 - Restructured data into array of objects.      
 - Adding early functionality, game now 'playable' thanks to the addition of character randomiser and guess buttons with corresponding alerts.      
 - Full set of 20 characters added.      
@@ -46,8 +47,12 @@
 - `alert()`s changed to 'Pop up' elements instead to allow for formatting / more functionality.     
 - Sounds added to most buttons / actions.       
 
-### 24/08/22: (headline here)       
-- Background music added on loop.       
+### 24/08/22: minor changes, major headaches       
+- Background music added on loop. Sound added to remainder of user actions.     
+- Attempted 'quick wins' from' list of unresolved issues. These were not quick and in some cases not wins. Rewrote the worst 'spaghetti' sections.            
+- Crucially, 'alternate' names added to dramatically improve user experience.       
+- Additional questions added and `char` objects updated accordingly.                 
+
 
 
 ---     
@@ -329,7 +334,7 @@ function closePopUp(){
 - Adding sound effects to buttons, popups.      
 - Rules box added so that 'Rules' button now has functionality.     
 
-## 24/08/22: (headline here):       
+## 24/08/22: minor changes, major headaches:       
 - Background music added. Used `loop="true"` HTML attribute in order to loop. Was going to write a recursive function but this was simpler! _Commented out the `musicLoop()` function for now because I can't listen to that music literally all day or I'll go insane..._          
 - Adding sound to 'mystery' cards: now this is done, all actions/clicks have a sound effect which has significantly improved the feel of the game.      
 ---
@@ -468,6 +473,7 @@ else if ((charArr.filter(char => char.altName.includes(guess).length()) == 1))
 - Next 'quick win' (_tempting fate agian_) is adding a few more questions. For example: Maude and Edna Krabappel have the same properties, by adding more properties and more questions, gameplay will be improved. Should be a lot simpler!      
 - _I've realised far, far too late that rather than adding every new boolean property (e.g. hasTie) to the char object constructor, I can simply assign a property:true to some characters, all others will return `falsy`..._      
 - Done - not too much work!     
+- Mute button added! Much easier than anticipated, adding unmute funcitonality took a couple of minutes but works a treat!           
 
 
 
@@ -487,6 +493,7 @@ else if ((charArr.filter(char => char.altName.includes(guess).length()) == 1))
 - CSS needs refactoring     
 - split JS into separate files? (how do you do this?)       
 - P v AI?       
+- Mute button!      
 
 
 ## Solving for the winner:         
@@ -511,7 +518,24 @@ function guessMade(inputSide){
 }
 ```
 
-## Highlights: favourite functions / code snippets:     
+## Highlights: favourite functions / code snippets:         
+Mute/unmute: less than 5 mins' work but does the job nicely!        
+```
+// Mute sound
+function muteIt(){
+    const loudNoises= document.querySelectorAll('audio');
+    for (const element of loudNoises){
+        if (element.muted === true){
+            element.muted = false
+            musicLoop(); // resumes BGM (unless I've commented it about, as above)
+        } else {
+            element.muted = true;
+            element.pause()
+        }
+    }
+}
+document.getElementById('mute').addEventListener('click', muteIt)
+```     
 I'm pleased with my re-written 'solving for the winner code' (see above) given where it was before (see below...)!
 
 ```
