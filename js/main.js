@@ -90,10 +90,8 @@ for (let i=0; i < trueBoolButtons.length; i++){
 const trueBoolButtonsR = $('.true-boolR');
 for (let i=0; i < trueBoolButtonsR.length; i++){
     let buttonId2 = trueBoolButtonsR[i].id;
-    console.log(buttonId2);
     $(`#${buttonId2}`).click(function(event){
         response2 = guessMe2[event.target.id.substring(1)];
-        console.log(response2);
         if (response2){
             popUp('Yes!');
         } else {
@@ -148,52 +146,72 @@ function popUp(words, size){
 }
 // closes above popup
 function closePopUp(){
-    console.log('close');
     $('#pop-up').remove();
 }
 
 
 // ---
-// Guess Who functionality 'solves for winner', displays message and resets game. Shows message if incorrect guess / not a character name.
-document.getElementById('submit-button').addEventListener('click', function(){
-    event.preventDefault(); // showing as deprecated, what should it be instead? Works though.
-    let guess = document.getElementById('makeGuess').value.toLowerCase();
-    if (guess == guessMe.name.toLowerCase()){
-        $('#right-card').children('img').toggleClass('hidden');
+
+// Solving for a winner...rewritten!
+// Function to run when either submit button is clicked
+function guessMade(inputSide){
+    event.preventDefault();
+    // gets user input from correct input element, convert to lower case, saves in variable:
+    let guess = document.getElementById(inputSide).value.toLowerCase();
+    console.log(guess);
+    // sets character to guess based on inputSide (had to do this as I can only pass a string argument into a function within an onclick html attribute...):
+    let characterToGuess = guessMe;
+    if (inputSide === 'makeGuessR'){
+        characterToGuess = guessMe2;
+    }
+    // checks if guess is correct character name, wrong character name, error character name:
+    let checkedGuess = checkGuess(guess, characterToGuess);
+    // Executes code based on output of checker function:
+    guessResult(checkedGuess, inputSide)
+    // // Hides menu (unless game ends with winner and page refreshed)
+    hideMenu(inputSide);
+}
+// Single checker function:
+function checkGuess(guess, characterToGuess){
+    let output = ''
+    if (characterToGuess.name.toLowerCase() === guess){
+        output = 'winner';
+    } else if (charArr.filter(obj => obj.name.toLowerCase() == guess).length == 1){
+        output = 'wrong';
+    } else {
+        output = '';
+    }
+    return output;
+}
+// I've decided on 'if, else if, else', in one function:
+function guessResult(checkedGuess, inputSide){
+    if (checkedGuess === 'wrong'){
+        document.getElementById('wrong').play();
+        popUp("D'oh! Try again", 'large');
+    } else if (checkedGuess === 'winner'){
+        // Below if/else is messy and a symptom of poor planning...but still works
+        if (inputSide === 'makeGuess'){ $('#right-card').children('img').toggleClass('hidden');
+        } else { $('#left-card').children('img').toggleClass('hidden'); }
+        // and then this ends the game
         document.getElementById('winner').play();
         popUp("Woohoo! You guessed correctly!", 'large');
         setTimeout(() => {
             location.reload();
         }, 3000);
-    } else if (charArr.filter(obj => obj.name.toLowerCase() == guess).length == 1) {
-        document.getElementById('wrong').play();
-        popUp("D'oh! Try again", 'large');
-    } else {
+    // No need to check for error - an else statement will do the job instead!
+    } else { 
         document.getElementById('sad').play();
-        popUp('Not a character. Remember: trying is the first step towards failure.', 'large');
+        popUp('Not a character. "I dunno, Marge. Trying is the first step towards failure."', 'large');
     }
-    showLeftMenu();
-})
-document.getElementById('submit-buttonR').addEventListener('click', function(){
-    event.preventDefault(); // showing as deprecated, what should it be instead? Works though.
-    let guess = document.getElementById('makeGuessR').value.toLowerCase();
-    if (guess == guessMe2.name.toLowerCase()){
-        document.getElementById('winner').play();
-        $('#left-card').children('img').toggleClass('hidden');
-        popUp("Woohoo! You guessed correctly!",'large')
-        setTimeout(() => {
-            location.reload();
-        }, 3000);
-
-    } else if (charArr.filter(obj => obj.name.toLowerCase() == guess).length == 1) {
-        document.getElementById('wrong').play();
-        popUp("D'oh! Try again",'large');
+}
+// Hide Menu function:
+function hideMenu(inputSide){
+    if (inputSide === 'makeGuess'){
+        showLeftMenu();
     } else {
-        document.getElementById('sad').play();
-        popUp('Not a character. Trying is the first step towards failure.','large');
+        showRightMenu();
     }
-    showRightMenu();
-})
+}
 
 // Show/hide dropdown menus to keep interface less cluttered
 function showLeftMenu(){
