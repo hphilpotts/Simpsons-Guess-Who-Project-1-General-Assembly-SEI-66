@@ -451,15 +451,29 @@ function hideMenu(inputSide){
     }
 }
 ```     
-- I've now removed my old, messy code and have implemented the new code.
+- I've now removed my old, messy code and have implemented the new code.        
+- Attempt 2! I've added arrays of names to each `char` object. I should now be able to make changes to the `checkGuess()` function so that it checks `guess` against `guessMe.altNames` or `char.altNames` rather than against `.name`.     
+- Took a while...tried to do too much in one line like so:      
+```
+else if ((charArr.filter(char => char.altName.includes(guess).length()) == 1))
+```
+- Instead, I ran the `.filter()` function above and saved the result to a variable, before then checking the `.length()` of the variable in the `else if` conditional a few lines down, like so:        
+```
+    let filterAll = charArr.filter(char => char.altName.includes(guess));
+    [...]
+    } else if (filterAll.length == 1){
+        [...]
+```     
+- Success! Not the 'quick win' I'd hoped for but a major step in terms of improving playability.        
+- Next 'quick win' (_tempting fate agian_) is adding a few more questions. For example: Maude and Edna Krabappel have the same properties, by adding more properties and more questions, gameplay will be improved. Should be a lot simpler!      
+
 
 
 
 
 ## Unsolved Issues:    
 - Show chars again when re-clicked.                
-- Add close / ok button functionality to popups        
-- alt names: e.g.: `['Abe', 'Grandpa', 'Grandpa Simpson']`          
+- Add close / ok button functionality to popups           
 - add further questions  
 - add timeout to sounds: too responsive            
 - add better sounds?   
@@ -537,7 +551,7 @@ document.getElementById('submit-buttonR').addEventListener('click', function(){
     }
     showRightMenu();
 }
-```
+```     
 
 ## What might have been...(rejected ideas):     
 

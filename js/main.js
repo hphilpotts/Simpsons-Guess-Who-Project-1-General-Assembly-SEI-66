@@ -7,8 +7,9 @@ $('#new-game').click(function(){
 
 const charArr = [];
 
-function char(name, image, male, child, hairColour, facialHair, glasses, tie, suspect = true){
+function char(name, altName, image, male, child, hairColour, facialHair, glasses, tie, alive = true, suspect = true, angry = false, school = false){
     this.name = name;
+    this.altName = altName;
     this.image = image;
     this.male = male;
     this.child = child;
@@ -16,31 +17,53 @@ function char(name, image, male, child, hairColour, facialHair, glasses, tie, su
     this.facialHair = facialHair;
     this.glasses = glasses;
     this.tie = tie;
+    this.alive = alive;
     this.suspect = suspect;
+    this.angry = angry;
+    this.school = school;
+    // could I refactor the above to run a loop over each property key?
     charArr.push(this);
 }
 
-let homer = new char("Homer", 'images/character-images/homer.jpeg', true, false, "bald", true, false, false);
-let marge = new char("Marge", 'images/character-images/marge.png', false, false, "blue", false, false, false);
-let bart = new char("Bart", 'images/character-images/bart.jpeg', true, true, "yellow", false, false, false);
-let lisa = new char("Lisa", 'images/character-images/lisa.png', false, true, "yellow", false, false, false);
-let milhouse = new char("Milhouse", 'images/character-images/milhouse.jpeg', true, true, "blue", false, true, false);
-let maggie = new char("Maggie", 'images/character-images/maggie.gif', false, true, "yellow", false, false, false);
-let ralph = new char("Ralph", 'images/character-images/ralph.webp', true, true, "wispy", false, false, false);
-let nelson = new char('Nelson', 'images/character-images/nelson.png', true, true, 'brown', false, false, false);
-let seymour = new char('Seymour', 'images/character-images/seymour.jpeg', true, false, 'grey', false, false, true);
-let edna = new char('Edna', 'images/character-images/edna.webp', false, false, 'brown', false, false, false);
-let moe = new char('Moe', 'images/character-images/moe.png', true, false, 'grey', false, false, true);
-let barney = new char('Barney', 'images/character-images/barney.webp', true, false, 'brown', false, false, false);
-let krusty = new char('Krusty', 'images/character-images/krusty.jpeg', true, false, 'green', true, false, true);
-let maude = new char('Maude', 'images/character-images/maude.jpeg', false, false, 'brown', false, false, false);
-let ned = new char('Ned', 'images/character-images/flanders.jpeg', true, false, 'brown', true, true, false);
-let abe = new char('Abe', 'images/character-images/abe.jpeg', true, false, 'yellow', true, true, true);
-let monty = new char('Monty', 'images/character-images/burns.jpeg', true, false, 'blue', false, false, true);
-let lenny = new char('Lenny', 'images/character-images/lenny.jpeg', true, false, 'black', false, false, false);
-let carl = new char('Carl', 'images/character-images/carl.png', true, false, 'black', false, false, false);
-let martin = new char('Martin', 'images/character-images/martin.png', true, true, 'brown', false, false, false)
+let homer = new char("Homer", ['homer', 'homer simpson', 'max power'], 'images/character-images/homer.jpeg', true, false, "bald", true, false, false);
+let marge = new char("Marge", ['marge', 'marge simpson'], 'images/character-images/marge.png', false, false, "blue", false, false, false);
+let bart = new char("Bart", ['bart', 'bart simpson'], 'images/character-images/bart.jpeg', true, true, "yellow", false, false, false);
+let lisa = new char("Lisa", ['lisa', 'lisa simpson'], 'images/character-images/lisa.png', false, true, "yellow", false, false, false);
+let milhouse = new char("Milhouse", ['milhouse', 'milhouse van houten'], 'images/character-images/milhouse.jpeg', true, true, "blue", false, true, false);
+let maggie = new char("Maggie", ['maggie', 'maggie simpson'], 'images/character-images/maggie.gif', false, true, "yellow", false, false, false);
+let ralph = new char("Ralph", ['ralph', 'ralph wiggum'], 'images/character-images/ralph.webp', true, true, "wispy", false, false, false);
+let nelson = new char('Nelson', ['nelson', 'nelson muntz'], 'images/character-images/nelson.png', true, true, 'brown', false, false, false);
+let seymour = new char('Seymour', ['seymour', 'skinner', 'seymour skinner', 'prinicpal skinner'], 'images/character-images/seymour.jpeg', true, false, 'grey', false, false, true);
+let edna = new char('Edna', ['edna', 'edna krabappel', 'ms krabappel', 'ms. krabappel'], 'images/character-images/edna.webp', false, false, 'brown', false, false, false);
+let moe = new char('Moe', ['moe', 'moe szylak'], 'images/character-images/moe.png', true, false, 'grey', false, false, true);
+let barney = new char('Barney', ['barney', 'barney gumble'], 'images/character-images/barney.webp', true, false, 'brown', false, false, false);
+let krusty = new char('Krusty', ['krusty', 'krusty the clown', 'herschel krustofsky', 'rory b. bellows'], 'images/character-images/krusty.jpeg', true, false, 'green', true, false, true);
+let maude = new char('Maude', ['maude', 'maude flanders', 'maud'], 'images/character-images/maude.jpeg', false, false, 'brown', false, false, false);
+let ned = new char('Ned', ['ned', 'ned flanders', 'flanders'], 'images/character-images/flanders.jpeg', true, false, 'brown', true, true, false);
+let abe = new char('Abe', ['abe', 'abe simpson', 'grandpa', 'grandpa simpson'], 'images/character-images/abe.jpeg', true, false, 'yellow', true, true, true);
+let monty = new char('Monty', ['monty', 'burns', 'monty burns', 'montgomery', 'montgomery burns', 'mr burns', 'mr. burns'], 'images/character-images/burns.jpeg', true, false, 'blue', false, false, true);
+let lenny = new char('Lenny', ['lenny', 'lenny leonard'], 'images/character-images/lenny.jpeg', true, false, 'black', false, false, false);
+let carl = new char('Carl', ['carl', 'carl carlson'], 'images/character-images/carl.png', true, false, 'black', false, false, false);
+let martin = new char('Martin', ['martin', 'martin prince', 'martin prince, jr.'], 'images/character-images/martin.png', true, true, 'brown', false, false, false)
 
+// reassinging properties that are not the constructor default:
+maude.alive = false;
+edna.alive = false;
+maggie.angry = true;
+moe.angry = true;
+abe.angry = true;
+const schoolArr = [bart, lisa, milhouse, ralph, nelson, seymour, edna, martin];
+schoolArr.forEach(element => {
+    element.school = true;
+});
+
+// Assinging true properties - all other chars will return falsy undefined if checked.
+const powerArr = [homer, monty, lenny, carl];
+powerArr.forEach(element => {
+    element.powerPlant = true;
+});
+
+console.log(marge.powerPlant);
 
 // Gets random character
 let guessMe = charArr[Math.floor(Math.random() * charArr.length)];
@@ -171,19 +194,25 @@ function guessMade(inputSide){
     // // Hides menu (unless game ends with winner and page refreshed)
     hideMenu(inputSide);
 }
+
+// console.log(charArr.filter(char => char.altName.includes('max power')).length());
+
 // Single checker function:
 function checkGuess(guess, characterToGuess){
     let output = ''
-    if (characterToGuess.name.toLowerCase() === guess){
+    let filterAll = charArr.filter(char => char.altName.includes(guess));
+    if (characterToGuess.altName.includes(guess)){
         output = 'winner';
-    } else if (charArr.filter(obj => obj.name.toLowerCase() == guess).length == 1){
+    } else if (filterAll.length == 1){
+    // } else if ((charArr.filter(char => char.altName.includes(guess).length()) == 1)){
+    // } else if (charArr.filter(char => char.name.toLowerCase() == guess).length == 1){
         output = 'wrong';
     } else {
         output = '';
     }
     return output;
 }
-// I've decided on 'if, else if, else', in one function:
+// Takes the result of checkGuess and executes code based on result.
 function guessResult(checkedGuess, inputSide){
     if (checkedGuess === 'wrong'){
         document.getElementById('wrong').play();
@@ -201,7 +230,7 @@ function guessResult(checkedGuess, inputSide){
     // No need to check for error - an else statement will do the job instead!
     } else { 
         document.getElementById('sad').play();
-        popUp('Not a character. "I dunno, Marge. Trying is the first step towards failure."', 'large');
+        popUp('Not a character: trying is the first step towards failure.', 'large');
     }
 }
 // Hide Menu function:
