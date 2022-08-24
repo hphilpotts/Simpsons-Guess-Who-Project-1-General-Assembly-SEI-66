@@ -476,16 +476,18 @@ else if ((charArr.filter(char => char.altName.includes(guess).length()) == 1))
 
 ## Unsolved Issues:    
 - Show chars again when re-clicked.                
-- Add close / ok button functionality to popups           
+- Add close / ok button functionality to popups rather than timer                  
 - add timeout to sounds: too responsive            
 - add better sounds?   
 - add victory animation?        
-- animate: reveal character card on edges       
-- enforce turns         
-- P v AI?           
-- draggable dialogue boxes?     
+- animate reveal character cards        
+- animate flip down characters in crowd           
+- enforce turns                
 - whitespace below character images: crop to ensure all images square?      
-- CSS needs refactoring
+- CSS needs refactoring     
+- split JS into separate files? (how do you do this?)       
+- P v AI?       
+
 
 ## Solving for the winner:         
 ```
