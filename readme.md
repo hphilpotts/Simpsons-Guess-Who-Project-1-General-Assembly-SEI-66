@@ -466,6 +466,9 @@ else if ((charArr.filter(char => char.altName.includes(guess).length()) == 1))
 ```     
 - Success! Not the 'quick win' I'd hoped for but a major step in terms of improving playability.        
 - Next 'quick win' (_tempting fate agian_) is adding a few more questions. For example: Maude and Edna Krabappel have the same properties, by adding more properties and more questions, gameplay will be improved. Should be a lot simpler!      
+- _I've realised far, far too late that rather than adding every new boolean property (e.g. hasTie) to the char object constructor, I can simply assign a property:true to some characters, all others will return `falsy`..._      
+- Done - not too much work!     
+
 
 
 
@@ -474,7 +477,6 @@ else if ((charArr.filter(char => char.altName.includes(guess).length()) == 1))
 ## Unsolved Issues:    
 - Show chars again when re-clicked.                
 - Add close / ok button functionality to popups           
-- add further questions  
 - add timeout to sounds: too responsive            
 - add better sounds?   
 - add victory animation?        

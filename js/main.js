@@ -41,7 +41,7 @@ let krusty = new char('Krusty', ['krusty', 'krusty the clown', 'herschel krustof
 let maude = new char('Maude', ['maude', 'maude flanders', 'maud'], 'images/character-images/maude.jpeg', false, false, 'brown', false, false, false);
 let ned = new char('Ned', ['ned', 'ned flanders', 'flanders'], 'images/character-images/flanders.jpeg', true, false, 'brown', true, true, false);
 let abe = new char('Abe', ['abe', 'abe simpson', 'grandpa', 'grandpa simpson'], 'images/character-images/abe.jpeg', true, false, 'yellow', true, true, true);
-let monty = new char('Monty', ['monty', 'burns', 'monty burns', 'montgomery', 'montgomery burns', 'mr burns', 'mr. burns'], 'images/character-images/burns.jpeg', true, false, 'blue', false, false, true);
+let monty = new char('Monty', ['monty', 'burns', 'monty burns', 'montgomery', 'montgomery burns', 'mr burns', 'mr. burns'], 'images/character-images/burns.jpeg', true, false, 'bald', false, false, true);
 let lenny = new char('Lenny', ['lenny', 'lenny leonard'], 'images/character-images/lenny.jpeg', true, false, 'black', false, false, false);
 let carl = new char('Carl', ['carl', 'carl carlson'], 'images/character-images/carl.png', true, false, 'black', false, false, false);
 let martin = new char('Martin', ['martin', 'martin prince', 'martin prince, jr.'], 'images/character-images/martin.png', true, true, 'brown', false, false, false)
@@ -62,6 +62,14 @@ const powerArr = [homer, monty, lenny, carl];
 powerArr.forEach(element => {
     element.powerPlant = true;
 });
+const moesArr = [homer, moe, barney, lenny, carl]
+moesArr.forEach(element => {
+    element.moes = true;
+})
+marge.jewellery = true;
+lisa.jewellery =true;
+edna.jewellery = true;
+lenny.pudding = true;
 
 console.log(marge.powerPlant);
 
