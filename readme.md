@@ -335,9 +335,12 @@ function closePopUp(){
 ---
 _The finish line is in sight with the project due to be presented in 48 hours' time. I'm happy that I have got to a playable level of functionality at this stage. I now need to make the best use of the time that remains: setting ambitious goals could significantly improve my project, too ambitious and I risk ending up with half-finished work._       
 ---     
-- I've elected to try to get through as many 'quick wins' in my 'unsolved issues' list as I can: these should be easily achieveable and will together deliver lots of small improvements that lift the project as a whole.      
+- I've elected to try to get through as many 'quick wins' in my 'unsolved issues' list as I can: these should be easily achieveable and will together deliver lots of small improvements that lift the project as a whole. **Branched into 'quick-wins'**      
 - Firstly: adding 'alt names: e.g.: `['Abe', 'Grandpa', 'Grandpa Simpson']`' - at the moment, the player must guess the name I have specified and all other versions will be rejected.      
-- Step 1: change `char.name`s from strings to arrays.  
+- Step 1: was initially change `char.name`s from strings to arrays, however I realised that I may break code that relies on `.name` being a string. Instead I am going to add another `key:value` of `altNames: [arr]` as this will only be required for the 'solving for winner' event code (left and right side).     
+_So this is why we branch...I've now broken the 'solve for winner' code which is far to complicated and should be modular. An hour of work and no progress, so much for 'quick fixes'..._  - I am going to copy the readme updates I have made so far and bin the 'quick-wins' branch which was, in hindsight, a terrible name.    
+- I'm going to start again, but this time I'm going to begin with rewriting my 'solve for winner' code. **Branched into 'rewrite'**     
+
 
 
 ## Unsolved Issues:    
