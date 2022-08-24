@@ -207,7 +207,7 @@ function guessMade(inputSide){
 
 // Single checker function:
 function checkGuess(guess, characterToGuess){
-    let output = ''
+    let output = '';
     let filterAll = charArr.filter(char => char.altName.includes(guess));
     if (characterToGuess.altName.includes(guess)){
         output = 'winner';
@@ -272,18 +272,18 @@ $('.card').click(function(){
     document.getElementById('flip').play();
     $(this).children('img').toggleClass('hidden');
     }
-)
+);
 
 // Show/hide rules box
 document.getElementById('rules').addEventListener('click', function(){
     let hideThis = document.getElementById('ruleBox');
     hideThis.classList.toggle('hidden');
-})
+});
 
 // Button sounds functions:
 $('button').click(function(){
     document.getElementById('clicked').play();
-})
+});
 
 // Background music
 function musicLoop(){
@@ -297,16 +297,16 @@ function muteIt(){
     const loudNoises= document.querySelectorAll('audio');
     for (const element of loudNoises){
         if (element.muted === true){
-            element.muted = false
+            element.muted = false;
             musicLoop(); // resumes BGM (unless I've commented it about, as above)
         } else {
             element.muted = true;
-            element.pause()
+            element.pause();
         }
     }
 }
-document.getElementById('mute').addEventListener('click', muteIt)
+document.getElementById('mute').addEventListener('click', muteIt);
 
 // Character card width variable - purely visual! 
-$('#right-card').width(($('#right-card').height() * 0.8))
+$('#right-card').width(($('#right-card').height() * 0.8));
 $('#left-card').width($('#right-card').width());

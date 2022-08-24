@@ -474,6 +474,8 @@ else if ((charArr.filter(char => char.altName.includes(guess).length()) == 1))
 - _I've realised far, far too late that rather than adding every new boolean property (e.g. hasTie) to the char object constructor, I can simply assign a property:true to some characters, all others will return `falsy`..._      
 - Done - not too much work!     
 - Mute button added! Much easier than anticipated, adding unmute funcitonality took a couple of minutes but works a treat!           
+- Updated User Stories / Kanban Board on Trello (long overdue!)     
+
 
 
 
@@ -492,8 +494,7 @@ else if ((charArr.filter(char => char.altName.includes(guess).length()) == 1))
 - whitespace below character images: crop to ensure all images square?      
 - CSS needs refactoring     
 - split JS into separate files? (how do you do this?)       
-- P v AI?       
-- Mute button!      
+- P v AI?           
 
 
 ## Solving for the winner:         
@@ -526,15 +527,15 @@ function muteIt(){
     const loudNoises= document.querySelectorAll('audio');
     for (const element of loudNoises){
         if (element.muted === true){
-            element.muted = false
-            musicLoop(); // resumes BGM (unless I've commented it about, as above)
+            element.muted = false;
+            musicLoop(); // resumes BGM (unless I've commented it about, as above);
         } else {
             element.muted = true;
-            element.pause()
+            element.pause();
         }
     }
 }
-document.getElementById('mute').addEventListener('click', muteIt)
+document.getElementById('mute').addEventListener('click', muteIt);
 ```     
 I'm pleased with my re-written 'solving for the winner code' (see above) given where it was before (see below...)!
 
