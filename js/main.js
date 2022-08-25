@@ -290,7 +290,7 @@ function musicLoop(){
     document.getElementById('bgm').play();
 }
 // Commenting this out for now before my sanity finally fails me....
-// musicLoop();
+musicLoop();
 
 // Mute sound
 function muteIt(){
