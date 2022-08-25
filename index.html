@@ -17,25 +17,28 @@
         <button id="new-game">New Game</button>
         <h1>Guess Who? - 'The Simpsons' Edition!</h1>
         <button id="mute">Mute Sound!</button>
-        <button>Player vs. Computer</button>
+        <button>Player vs. Computer</button> <!-- not working...yet-->
     </header>
     <!-- Left-hand 'ask a question' dropdown, default is hidden -->
+    <!-- For Player 1 -->
     <div class="dropdown-menu" id="dropdown-left" style="display:none">
         <div class="instruct">Click again to hide menu and see characters!</div>
-        <div class="row-1">Is your character:<br>
+        <!-- Each button in divs below triggers answerString() or true/false bool button event listeners -->
+        <!-- This evaluates against guessMe based on the question being asked and provides response -->
+        <div>Is your character:<br>
             <button class="true-bool" id="male">Male</button>
             <button class="false-bool" id="not-male">Female</button>
             <button class="true-bool"id="child">a Child</button>
             <button class="false-bool" id="not-child">an Adult</button>
         </div>
-        <div class="row-2">Does your character have:<br>
+        <div>Does your character have:<br>
             <button class="true-bool" id="glasses">Glasses</button>
             <button class="true-bool" id="tie">A tie</button>
             <button class="true-bool" id="jewellery">Jewellery</button>
             <button class="true-bool" id="facialHair">Facial Hair</button>
             <button onclick="answerString('bald')">A bald head</button>
         </div>
-        <div class="row-3">Is your character's hair:<br>
+        <div>Is your character's hair:<br>
             <button onclick="answerString('blue')">Blue</button>
             <button onclick="answerString('grey')">Grey</button>
             <button onclick="answerString('yellow')">Yellow</button>
@@ -44,9 +47,9 @@
             <button onclick="answerString('green')">Green</button>
             <button onclick="answerString('wispy')">Wispy</button>
         </div>
-        <div>Does your character go to:<br>
+        <div>Could your character be found at:<br>
             <button class="true-bool" id="school">Springfield Elementary</button>
-            <button class="true-bool" id="powerPlant">Nuclear Plant</button>
+            <button class="true-bool" id="powerPlant">Springfield Nuclear Plant</button>
             <button class="true-bool" id="moes">Moe's Tavern</button>
         </div>
         <div>Is your character:<br>
@@ -54,12 +57,13 @@
             <button class="true-bool" id="alive">Alive</button>
             <button class="true-bool" id="pudding">Not supposed to get pudding in their eye</button>
         </div>
+        <!-- Player inputs a 'Guess Who' here, triggers guessMade() - 'Solve For Winner' code -->
         <form id="guess-form" role="search">
             <input type="text" id="makeGuess" placeholder="I think your character is...">
             <button id="submit-button" onclick="guessMade('makeGuess')">Make a guess!</button>
         </form>
     </div>
-    <!-- Rules box, default is hidden -->
+    <!-- Rules box, default is hidden, controlled by 'Rules' button -->
     <div id="ruleBox" class="dropdown-menu hidden rulesBox">
         <h3>How to Play: Guess Who 'The Simpsons' Edition!</h3>
         <p>- Each player has a character chosen at random, the goal is to guess your opponent's character before they guess yours! Player 1 is trying to guess the character behind the pink card, Player 2 is the blue one.</p>
@@ -68,22 +72,25 @@
         <p>If they are wrong... it is their opponent's turn to ask a question or make a guess. If they are right... they win!</p>
     </div>
     <!-- Right-hand 'ask a question' dropdown, default is hidden -->
+    <!-- For Player 2 -->
     <div class="dropdown-menu" id="dropdown-right" style="display:none">
         <div class="instruct">Click again to hide menu and see characters!</div>
-        <div class="row-1">Is your character:<br>
+        <!-- Each button in divs below triggers answerStringR() or true/false bool buttonR event listeners -->
+        <!-- This evaluates against guessMe2 based on the question being asked and provides response -->
+        <div>Is your character:<br>
             <button class="true-boolR" id="Rmale">Male</button>
             <button class="false-boolR" id="Rnot-male">Female</button>
             <button class="true-boolR"id="Rchild">a Child</button>
             <button class="false-boolR" id="Rnot-child">an Adult</button>
         </div>
-        <div class="row-2">Does your character have:<br>
+        <div>Does your character have:<br>
             <button class="true-boolR" id="Rglasses">Glasses</button>
             <button class="true-boolR" id="Rtie">A tie</button>
             <button class="true-boolR" id="Rjewellery">Jewellery</button>
             <button class="true-boolR" id="RfacialHair">Facial Hair</button>
             <button onclick="answerStringR('bald')">A bald head</button>
         </div>
-        <div class="row-3">Is your character's hair:<br>
+        <div>Is your character's hair:<br>
             <button onclick="answerStringR('blue')">Blue</button>
             <button onclick="answerStringR('grey')">Grey</button>
             <button onclick="answerStringR('yellow')">Yellow</button>
@@ -91,9 +98,9 @@
             <button onclick="answerStringR('brown')">Brown</button>
             <button onclick="answerStringR('green')">Green</button>
         </div>
-        <div>Does your character go to:<br>
+        <div>Could your character be found at:<br>
             <button class="true-boolR" id="Rschool">Springfield Elementary</button>
-            <button class="true-boolR" id="RpowerPlant">Nuclear Plant</button>
+            <button class="true-boolR" id="RpowerPlant">Springfield Nuclear Plant</button>
             <button class="true-boolR" id="Rmoes">Moe's Tavern</button>
         </div>
         <div>Is your character:<br>
@@ -101,17 +108,18 @@
             <button class="true-boolR" id="Ralive">Alive</button>
             <button class="true-boolR" id="Rpudding">Not supposed to get pudding in their eye</button>
         </div>
+        <!-- Player inputs a 'Guess Who' here, triggers guessMade() - 'Solve For Winner' code -->
         <form id="guess-formR" role="search">
             <input type="text" id="makeGuessR" placeholder="I think your character is...">
             <button id="submit-buttonR" onclick="guessMade('makeGuessR')">Make a guess!</button>
         </form>
     </div>
-    <!-- Buttons to show/hide 'ask a question' dropdowns above -->
+    <!-- Buttons to show/hide 'ask a question' dropdowns Left and Right above -->
     <div id="dropdown-menus">
         <button onclick="showLeftMenu()">Player 1: ask a question!</button>
         <button onclick="showRightMenu()">Player 2: ask a question!</button>
     </div>
-    <!-- Playable area, encompasses both 'crowds' and both 'mystery character cards' -->
+    <!-- 'Playable area' / board, encompasses both 'crowds' and both 'mystery character cards' -->
     <div style="background-image: url('images/misc-images/background2.jpeg');" id="board">
         <!-- Left side -->
         <div class="left-side half-board" id="left-board">
@@ -263,7 +271,11 @@
         <audio id="bgm" src="sounds/musak.flac" loop="true"></audio>
         <audio id="flip" src="sounds/flip.wav"></audio>
     </div>
+    <!-- <script> links to .js files below -->
     <script src="js/jquery.js"></script>
+    <script src="js/chars.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/controls.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

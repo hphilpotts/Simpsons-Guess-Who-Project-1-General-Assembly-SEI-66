@@ -476,9 +476,12 @@ else if ((charArr.filter(char => char.altName.includes(guess).length()) == 1))
 - Mute button added! Much easier than anticipated, adding unmute funcitonality took a couple of minutes but works a treat!           
 - Updated User Stories / Kanban Board on Trello (long overdue!)     
 
-
-
-
+## 25/08/22: Don't touch it, don't even look at it:     
+- I've decided on the advice given yesterday to largely leave the project as it is!     
+- Deployed to [git pages](https://pages.git.generalassemb.ly/hphilpotts/project1-hp-guesswho/)      
+- **Branched** so that I don't break a perfectly fine project!       
+- JavaScript in `js.main` separated out across four files (audio, chars, controls, main) for readability.       
+- Added loads more comments to code, removed any remaining `console.log`s or commented code snippets no longer needed.      
 
 
 
