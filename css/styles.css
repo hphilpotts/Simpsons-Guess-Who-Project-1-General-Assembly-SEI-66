@@ -106,7 +106,7 @@ input {
 #board {
     background-color: #FFD90F;
     background-image: url(images/misc-images/background2.jpeg);
-    background-color: #FFD90F;
+    /* background-color: #FFD90F; */
     /* background-size: cover; */
     height: 85vh;
     width: 100%;
