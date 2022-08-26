@@ -3,6 +3,15 @@
 
 # 'The Simpsons':'Guess Who?'        
 
+## Readme Contents:     
+- Technologies used, links to Trello Boards        
+- Project timeline (daily overview)        
+- Full Readme (daily detail)       
+- Unsolved issues      
+- Solving for the winner       
+- Highlights       
+- Rejected game ideas       
+
 ## Technologies used:       
 - HTML, CSS, JavaScript     
 - jQuery
@@ -11,7 +20,7 @@
 - Kanban boards on _trello.com_
 - Wireframes on _good old pen & paper_      
 
-## Links to Wireframes and User Stories:        
+## Links to User Stories/Trello Boards:        
 [User Stories - Trello Board](https://trello.com/b/inPyVyln/project-01-user-stories)       
 [Project Kanban - Trello Board](https://trello.com/b/4Ooc6PXD/project-01-kanban-board)      
 
@@ -51,9 +60,13 @@
 - Background music added on loop. Sound added to remainder of user actions.     
 - Attempted 'quick wins' from' list of unresolved issues. These were not quick and in some cases not wins. Rewrote the worst 'spaghetti' sections.            
 - Crucially, 'alternate' names added to dramatically improve user experience.       
-- Additional questions added and `char` objects updated accordingly.                 
+- Additional questions added and `char` objects updated accordingly.      
 
+### 25/08/22: don't touch it, don't even look at it     
+- Deployed to git pages.        
+- Tidied up code: split parts of main.js into separate files, added further comments across project, removed `console.log()`s.          
 
+## Full Readme:
 
 ---     
 
@@ -597,7 +610,4 @@ document.getElementById('submit-buttonR').addEventListener('click', function(){
 
 ### Bohnanza:       
 - I love this game, but not many people have heard of it!       
-- Also quite a long game and faces similar AI issues as above.      
-
-### Battleships:        
-- Great game and fun project but my friend already did this!        
+- Also quite a long game and faces similar AI issues as above.        
