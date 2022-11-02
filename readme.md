@@ -5,10 +5,9 @@
 # The Simpsons' 'Guess Who?' : SEI Project 1        
 
 ## Description:     
-This is a frontend web game - _The Simpsons_ themed _Guess Who?_ - built solo 'from scratch' in 1 week. Completed as my first project for General Assembly London's Software Engineering Immersive course, presented to my Instructional Team and fellow cohort on 26/08/22.            
+This is a frontend web game - _The Simpsons_ themed _Guess Who?_ - built solo 'from scratch' in one week using primarily HTML, CSS, JavaScript and jQuery. I built this as my first project for General Assembly London's Software Engineering Immersive course, and presented a deployed version to my Instructional Team and fellow SEI cohort on 26/08/22.            
 
 ![Screenshot of the finished game](images/readme/final.png)     
-_- screenshot of deployed game_       
 
 ## Links:       
 [Deployment link](https://pages.git.generalassemb.ly/hphilpotts/project1-hp-guesswho/)      
@@ -61,48 +60,7 @@ At the time, I was particularly pleased with my refactored (and indeed restructu
 
 Which previously was:       
 
-```
-// Guess Who functionality 'solves for winner', displays message and resets game. Shows message if incorrect guess / not a character name.
-document.getElementById('submit-button').addEventListener('click', function(){
-    event.preventDefault(); // showing as deprecated, what should it be instead? Works though.
-    let guess = document.getElementById('makeGuess').value.toLowerCase();
-    if (guess == guessMe.name.toLowerCase()){
-        $('#right-card').children('img').toggleClass('hidden');
-        document.getElementById('winner').play();
-        popUp("Woohoo! You guessed correctly!", 'large');
-        setTimeout(() => {
-            location.reload();
-        }, 3000);
-    } else if (charArr.filter(obj => obj.name.toLowerCase() == guess).length == 1) {
-        document.getElementById('wrong').play();
-        popUp("D'oh! Try again", 'large');
-    } else {
-        document.getElementById('sad').play();
-        popUp('Not a character. Remember: trying is the first step towards failure.', 'large');
-    }
-    showLeftMenu();
-})
-document.getElementById('submit-buttonR').addEventListener('click', function(){
-    event.preventDefault(); // showing as deprecated, what should it be instead? Works though.
-    let guess = document.getElementById('makeGuessR').value.toLowerCase();
-    if (guess == guessMe2.name.toLowerCase()){
-        document.getElementById('winner').play();
-        $('#left-card').children('img').toggleClass('hidden');
-        popUp("Woohoo! You guessed correctly!",'large')
-        setTimeout(() => {
-            location.reload();
-        }, 3000);
-
-    } else if (charArr.filter(obj => obj.name.toLowerCase() == guess).length == 1) {
-        document.getElementById('wrong').play();
-        popUp("D'oh! Try again",'large');
-    } else {
-        document.getElementById('sad').play();
-        popUp('Not a character. Trying is the first step towards failure.','large');
-    }
-    showRightMenu();
-})
-```
+![Old Solve for Winner snippet](/images/readme/oldsolveforwinner.png)       
 
 Lastly, I would regard the visuals achieved as a singificant success, especially given my percieved confidence/compentence with CSS at the time. Getting really positive feedback from our TA the first time I demonstrated my app was a great confidence boost the day before presenting the project!        
 
