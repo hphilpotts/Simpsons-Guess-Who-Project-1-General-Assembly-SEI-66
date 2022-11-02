@@ -1,11 +1,14 @@
 # The Simpsons' 'Guess Who?' : SEI Project 1        
 
-![GA Header Image](images/readme/GA-header.png)        
+<p align="center">
+    <img src="images/readme/GA-header.png">
+</p>
 
 ## Description:     
 This is a frontend web game - _The Simpsons_ themed _Guess Who?_ - built solo 'from scratch' in 1 week. Completed as my first project for General Assembly London's Software Engineering Immersive course, presented to my Instructional Team and fellow cohort on 26/08/22.            
 
 ![Screenshot of the finished game](images/readme/final.png)     
+_Screenshot of deployed game_       
 
 ## Links:       
 [Deployment link](https://pages.git.generalassemb.ly/hphilpotts/project1-hp-guesswho/)      
@@ -29,15 +32,21 @@ The brief for this project was to build a web-based game from scratch using my k
 - Use JavaScript and/or jQuery for DOM manipulation     
 - Deploy your game online, where the rest of the world can access it        
 
-The ostensible aim of the project was to consolidate learning from the first unit of the course, through practical application of the skills and technologies covered. More importantly though, this project was a first simulation of working in a professional environment. It provided an inital introduction to coding independently, working to a brief and to a timescale; encompassing all stages of product development: from planning, to production, to deployment and presentation.       
+One clear aim of the project was to consolidate learning from the first unit of the course, through practical application of the skills and technologies covered. More importantly though, this project was a first simulation of working in a professional environment. It provided an inital introduction to coding independently, working to a brief and to a timescale; encompassing all stages of product development: from planning, to production, to deployment and presentation.       
 
 ## Key takeaways and learnings:       
 This project holds a special place for me, as it represents the point at which I felt fully validated in my decision to commit to a career change. Being given the freedom to create anything I wanted, starting to find my own coding rhythm, happily losing hours at a time engrossed in code with my headphones on, and finally seeing my efforts come together into a project I was genuinely proud of: these experiences were confirmation that this was something I genuinely enjoyed (and wasn't too bad at either)!          
 
+![Screenshot of a message: 'It works!](/images/screenshot1.png)     
+
+
 This project also built my confidence in using HTML and JavaScript in a practical application, and it really helped my understanding of DOM manipulation, with and without jQuery. I had struggled with CSS positioning in the two weeks before the project (and - if I'm honest - during the project too!), however getting positive feedback on how my app was shaping up was another great confidence booster. Lastly, it gave me a great introduction to project work as a whole, particularly Wireframing, project planning and management, and Git version control.       
 
 My most significant points of learning were mostly around planning and finding balance in my approach:     
-- Structuring my code well early on is a huge driver of success, and this all starts in the planning phase. It is quite easy to 'paint yourself into a corner' if the planning isn't right. See, for example: _Challenge_ below encountered when scaling up from one 'side' of the board to a second, or mobile-responsive CSS issue in _Bugs & Issues_.               
+- Structuring my code well early on is a huge driver of success, and this all starts in the planning phase. It is quite easy to 'paint yourself into a corner' if the planning isn't right. See, for example: _Challenge_ below encountered when scaling up from one 'side' of the board to a second, or mobile-responsive CSS issue in _Bugs & Issues_ further down in README.     
+
+![Screenshot of code: 'painted myself into a corner'](/images/readme/paintedintocorner.png)     
+
 - Don't be over ambitious: instead be realistic about what is achievable in the timeframe given. As deployment day approaches, aim for fixes or additions that deliver the most in the shortest time.       
 - It is important to find a balance between 'clever', condensed code that takes longer to write, and simpler, longer code that may be less elegant but delivers functionality more quickly. You can always go back and refactor - although the earlier this is done, the better!       
 - Breaks are important! Whether that is as substantial as stepping outside for a walk (oftentimes when those 'Eureka' moments come), switching to a new task, or anything in between.       
