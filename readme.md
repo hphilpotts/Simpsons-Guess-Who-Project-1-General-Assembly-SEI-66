@@ -1,10 +1,9 @@
 # The Simpsons' 'Guess Who?' : SEI Project 1        
 
-<!-- TODO : insert GA image here -->        
-![GA Header Image](link)        
+![GA Header Image](images/readme/GA-header.png)        
 
 ## Description:     
-This is a frontend web game - _The Simpsons_ themed _Guess Who?_ - built solo 'from scratch' in 1 week. Completed as my first project for General Assembly London's Software Engineering Immersive course.       
+This is a frontend web game - _The Simpsons_ themed _Guess Who?_ - built solo 'from scratch' in 1 week. Completed as my first project for General Assembly London's Software Engineering Immersive course, presented to my Instructional Team and fellow cohort on 26/08/22.            
 
 ![Screenshot of the finished game](images/readme/final.png)     
 
@@ -21,9 +20,19 @@ To contribute to this project, please fork from [GitHub](https://github.com/hphi
 - Project boards on trello.com, Wireframes on good old pen & paper      
 - Hosted on GitHub Pages        
 
-## Project goals:       
+## Brief & Project aims:       
+The brief for this project was to build a web-based game from scratch using my knowledge of HTML, CSS and JavaScript gained in the first two weeks of the SEI course. Technical requirements included:      
+- Separate HTML/CSS/JS files        
+- Use semantic markup for HTML and CSS (adhere to best practices)       
+- Stick with KISS (Keep It Simple Stupid) and DRY (Don't Repeat Yourself) principles        
+- Have well-formatted, and well-commented code      
+- Use JavaScript and/or jQuery for DOM manipulation     
+- Deploy your game online, where the rest of the world can access it        
+
+The ostensible aim of the project was to consolidate learning from the first unit of the course, through practical application of the skills and technologies covered. More importantly though, this project was a first simulation of working in a professional environment. It provided an inital introduction to coding independently, working to a brief and to a timescale; encompassing all stages of product development: from planning, to production, to deployment and presentation.       
 
 ## Key learnings:       
+As my first ever foray into     
 
 ## Successes and Challenges:         
 
