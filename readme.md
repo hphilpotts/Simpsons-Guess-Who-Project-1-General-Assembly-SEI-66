@@ -71,7 +71,56 @@ Lastly, I would regard the visuals achieved as a singificant success, especially
 - BGM does not always play on first load: likely fix requires `canplaythrough` Event Listener.      
 - P v. AI functionality not implemented - button is present however!        
 
-## Code Process:        
+## Production Process:    
+
+### 18/08/22 | Day 0 | Brief issued:               
+
+I decided on the idea of a _Guess Who?_ game: this felt like an achievable idea in the timeframe given, was likley to be familiar to most users, required relatively few 'moving parts', and game duration is typically short (meaning less time for things to break!).     
+
+The risks I identified were that: this could possibly be under-ambitious / not visually compelling as a project, it requires a relatively large amount of character art, an 'AI' opponent may be under- or over-powered and Player v. Player functionality may be challenging on one screen (for example, keeping respective characters to guess a secret).     
+
+### 19/08/22 | Day 1 | Planning & first steps:        
+
+I set up two Trello boards: one Kanban board for project management and a board for User Stories - both pictured below:      
+
+![Kanban Trello Board](/images/readme/kanbanboard.png)      
+
+![User stories Trello](/images/readme/userstoriesboard.png)     
+
+I then sketched out a rough 'game flow' flowchart and Wireframe, choosing pen and paper rather than dedicated software. In hindsight, any gains in terms of speed were offset by losses in terms of legibility (!) - for future projects I stuck with digital versions.     
+
+![Game Flow sketch](/images/image1.jpeg)        
+
+![Wireframe sketch](/images/image2.jpeg)        
+
+___         
+
+Once I had set up my project folder, Git and GitHub repos etc., I then started to think about how to store information about my characters' characteristics, ultimately deciding that a JavaScript `object` was the right way to structure this information. Specifically, I chose the following format:        
+
+```
+obj = {
+    character: [array, of, characteristic, strings],
+    character2: [array, of, different, strings]
+}
+```     
+
+Having populated an object with sample characters and their respective data, I wrote and tested a basic 'eliminator' function that would be the starting point for my game:        
+
+![console.logs of eliminator function working](/images/earlyConsole.png)        
+
+_As an aside: the accidental phrasing of_ `do they have the attribute: Hat?` and `do they have the attribute: Male?` _still makes me laugh long after I first read this in the console...!_     
+
+It was at this point that I started to question if my data structure was the right one: a dev friend suggested than an array of objects would be preferable, as such I sought advice from my Instructors. This was indeed confirmed and I was very glad that I checked!     
+
+Before finishing for the day I mapped out a rough framework for the game using CSS to position `<divs>` with block colour backgrounds, finding `vh` a particularly useful measurement for achieving some responsiveness.        
+
+![Rough structure mapped out in block colours](/images/screenshot2.png)     
+
+### 22/08/22 | Day 2 | First branch:        
+
+
+
+
 
 
 
