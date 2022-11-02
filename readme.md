@@ -104,8 +104,16 @@ document.getElementById('submit-buttonR').addEventListener('click', function(){
 })
 ```
 
-Lastly, I would regard the visuals achieved as a singificant success, especially given my percieved confidence/compentence with CSS at the time. Getting really positive feedback when I showed our TA my project for the first time was a great confidence boost the day before presenting the project!        
+Lastly, I would regard the visuals achieved as a singificant success, especially given my percieved confidence/compentence with CSS at the time. Getting really positive feedback from our TA the first time I demonstrated my app was a great confidence boost the day before presenting the project!        
 
-## Bugs:        
+## Bugs & Issues:       
+- App is not fully responsive and will not work on mobile devices as a result: a full overhaul of the CSS is required as part of a 'mobile-first' approach, particularly where `px` has been used for sizing and positioning. CSS also requires refactoring where code is not 'DRY'.      
+- Characters do not display again when clicked on for a second time.        
+- Whitespace below character images is uneven.      
+- BGM does not always play on first load: likely fix requires `canplaythrough` Event Listener.      
+- P v. AI functionality not implemented - button is present however!        
+
+## Code Process:        
+
 
 
