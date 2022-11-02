@@ -135,7 +135,7 @@ function guessMade(inputSide){ // Input side differentiates between L (Player 1)
     let checkedGuess = checkGuess(guess, characterToGuess);
     // Executes code based on output of checker function:
     guessResult(checkedGuess, inputSide)
-    // // Hides menu (unless game ends with winner and page refreshed)
+    // Hides menu (unless game ends with winner and page refreshed)
     hideMenu(inputSide);
 }
 
