@@ -73,7 +73,7 @@ Lastly, I would regard the visuals achieved as a significant success, especially
 
 ## Future Improvements:     
 - Add Player vs. Computer functionality.        
-- Add close / ok button functionality to popups rather than using a timer.      
+- Add close / ok button functionality to pop ups rather than using a timer.      
 - Add timeout to sounds: at present this feels _too_ responsive.        
 - Animations: victory animation, animate reveal cards / flip down characters.       
 - Enforce turns between players.        
@@ -125,7 +125,7 @@ Before finishing for the day I mapped out a rough framework for the game using C
 
 ### 22/08/22 | Day 2 | First branch:        
 
-Over the weekend I made the decision to use _The Simpsons_ characters for my version of _Guess Who?_: this would provide strong, clear theming as well as removing a significant amouNt of work required for character/game art by using existing assets.        
+Over the weekend I made the decision to use _The Simpsons_ characters for my version of _Guess Who?_: this would provide strong, clear theming as well as removing a significant amount of work required for character/game art by using existing assets.        
 
 I also restructured my character data to be an array (`charArr`) of character objects (each holding various character properties). At this stage, I introduced a `constructor` that would `push()` a new character to an array. I soon found myself bogged down in writing differing code for character properties that were `string` or `Boolean`, e.g. `hairColour: "bald"` cf. `male: true`. At the time, I noted:       
 
@@ -159,7 +159,7 @@ At this stage I then paused and then started to add more comments to my code as 
 
 ### 24/08/22 | Day 4 | Minor changes (major headaches):     
 
-This was a challenging day: after some early success (BGM and sound effects added - **with mute button** following some feedback!), I found that what I thought would be quick fixes were anything but quick - and in some cases were not fixes. Realising that I had initially structured sections of code poorly, which was now giving me problems, I worked on rewriting the worst 'spaghetti' sections - the 'Solve for Winner' function from earlier being one of the worst culprits!     
+This was a challenging day: after some early success (BGM and sound effects added - **with a mute button** following some feedback!), I found that what I thought would be quick fixes were anything but quick - and in some cases were not fixes. Realising that I had initially structured sections of code poorly, which was now giving me problems, I worked on rewriting the worst 'spaghetti' sections - the 'Solve for Winner' function from earlier being one of the worst culprits!     
 
 One major late improvement was the addition of alternate character names, greatly improving user experience as a single specific name was no longer required as input:         
 
