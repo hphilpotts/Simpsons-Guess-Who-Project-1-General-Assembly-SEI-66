@@ -117,7 +117,7 @@ Having populated an object with sample characters and their respective data, I w
 
 _As an aside: the accidental phrasing of_ `do they have the attribute: Hat?` and `do they have the attribute: Male?` _still makes me laugh long after I first read this in the console...!_     
 
-It was at this point that I started to question if my data structure was the right one: a dev friend suggested thaT an array of objects would be preferable, as such I sought advice from my Instructors. This was indeed confirmed and I was very glad that I checked!     
+It was at this point that I started to question if my data structure was the right one: a dev friend suggested that an array of objects would be preferable, as such I sought advice from my Instructors. This was indeed confirmed and I was very glad that I checked!     
 
 Before finishing for the day I mapped out a rough framework for the game using CSS to position `<divs>` with block colour backgrounds, finding `vh` a particularly useful measurement for achieving some responsiveness.        
 
