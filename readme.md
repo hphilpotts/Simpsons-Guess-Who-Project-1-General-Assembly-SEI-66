@@ -11,7 +11,6 @@ This is a frontend web game - _The Simpsons_ themed _Guess Who?_ - built solo 'f
 
 ## Links:       
 [Deployment link](https://pages.git.generalassemb.ly/hphilpotts/project1-hp-guesswho/)      
-[Google Doc README](https://docs.google.com/document/d/1ZMBQ_S5oBLUA-81iI_ykc59TUdvBHnj5S-SqFv_QKpU/edit#)      
 
 ## Install:     
 To contribute to this project, please fork from [GitHub](https://github.com/hphilpotts/Simpsons-Guess-Who-Project-1-General-Assembly-SEI-66) and submit a pull request. No installs are required in order to contribute.        
